@@ -1,0 +1,691 @@
+[
+  {
+    "id": 1,
+    "heading": "Financial Results of the Company",
+    "icon": "FinancialResult",
+    "subheadings": [
+      {
+        "id": 1,
+        "title": "Consolidated Financial Statements",
+        "slug": "consolidated-financial-statements",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        },
+        "other": ""
+      },
+      {
+        "id": 2,
+        "title": "Standalone Financial Statements",
+        "slug": "standalone-financial-statements",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "heading": "Group Financials",
+    "icon": "GroupFinancial",
+    "subheadings": [
+      {
+        "id": 3,
+        "title": "PEGEPL",
+        "slug": "pegepl",
+        "fy": {
+          
+        }
+      },
+      {
+        "id": 4,
+        "title": "PEIPL",
+        "slug": "peipl",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "heading": "Board Meeting",
+    "icon": "BoardMeeting",
+    "subheadings": [
+      {
+        "id": 9,
+        "title": "Notice of Board Meetings",
+        "slug": "notice-of-board-meetings",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      },
+      {
+        "id": 10,
+        "title": "Intimation of Outcomes",
+        "slug": "intimation-of-outcomes",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "heading": "Investor Relations",
+    "icon": "InvesterRelations",
+    "subheadings": [
+      {
+        "id": 11,
+        "title": "Shareholding Pattern",
+        "slug": "shareholding-pattern",
+        "fy": {
+          "2018": ["https://premierenergies.com/downloads/dummy1.pdf"],
+          "2019": ["https://premierenergies.com/downloads/dummy2.pdf"],
+          "2020": ["https://premierenergies.com/downloads/dummy3.pdf"],
+          "2021": ["https://premierenergies.com/downloads/dummy4.pdf"],
+          "2022": ["https://premierenergies.com/downloads/dummy5.pdf"],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      },
+      {
+        "id": 12,
+        "title": "Annual Reports_PEL",
+        "slug": "annual-reports-pel",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "heading": "Report Filings",
+    "icon": "ReportFilings",
+    "subheadings": [
+      {
+        "id": 24,
+        "title": "Corporate Governance Report",
+        "slug": "corporate-governance-report",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "heading": "Corporate Governance",
+    "icon": "CorporateGovernance",
+    "subheadings": []
+  },
+  {
+    "id": 7,
+    "heading": "Corporate Social Responsibility",
+    "icon": "CSR",
+    "subheadings": [
+      {
+        "id": 30,
+        "title": "CSR Policy",
+        "slug": "csr-policy",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "heading": "Investor Details",
+    "icon": "InvestorInformation",
+    "subheadings": [
+      {
+        "id": 32,
+        "title": "Name of debenture trustee with contact details",
+        "slug": "name-of-debenture-trustee-with-contact-details",
+        "fy": {
+          "2018": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sisasdsad the file"
+            }
+          ],
+          "2019": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this siasdsads the file"
+            }
+          ],
+          "2020": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "thasdis sis the file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.2",
+              "title": "this sis the fasdile"
+            }
+          ],
+          "2021": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.asddpdf1.2",
+              "title": "this sis theasd file"
+            },
+            {
+              "url": "https://premierenergies.com/dowasdasnloads/dummy.pdf1.2",
+              "title": "this sis theasd file"
+            }
+          ],
+          "2022": [
+            {
+              "url": "https://premierenergies.com/downloads/dummasdy.pdf1.2",
+              "title": "this sis the safaffile"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pddsadsdf1.2",
+              "title": "this sis the asfile"
+            }
+          ],
+          "2023": [
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pasdadf1.2",
+              "title": "this sis thsade file"
+            },
+            {
+              "url": "https://premierenergies.com/downloads/dummy.pdf1.sad2",
+              "title": "this sis thasde file"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
