@@ -155,7 +155,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/04/202404291993936092.pdf#page=17"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
