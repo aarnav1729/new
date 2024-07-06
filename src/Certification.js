@@ -101,7 +101,7 @@ export const Certification = () => {
                   <ul>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://certificates.iecee.org/#/deliverables/CERT/73875/view"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -137,7 +137,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://www.certipedia.com/companies/631490/product_certificates?locale=en"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -146,7 +146,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://certificates.iecee.org/#/deliverables/CERT/1547050/view"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -200,7 +200,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://scorecard.pvel.com/top-performers/?manuf_name=2091"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
