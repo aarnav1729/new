@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import { Helmet } from "react-helmet";
 import { useHistory, useParams } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
-import PDF from "./PDF/PDF4_new.pdf";
 import axios from "axios";
 import Img01 from "./images/PE-Logo -1b.jpg";
 import Img02 from "./images/PE-Logo -2.jpg";
@@ -15,16 +14,10 @@ import Img06 from "./images/PE-Logo -6.jpg";
 import Img07 from "./images/PE-Logo -7.jpg";
 import Img08 from "./images/PE-Logo -8.jpg";
 import Img09 from "./images/PE-Logo -9.jpg";
-import Img10 from "./images/PE-Logo -10.png";
 import Img11 from "./images/PE-Logo -11.png";
 import Img12 from "./images/PE-Logo -12.png";
-import Img13 from "./images/PE-Logo -13.png";
 import Img14 from "./images/PE-Logo -14.jpg";
-import Img15 from "./images/PE-Logo -15.png";
 import Img16 from "./images/PE-Logo -16.png";
-import Img17 from "./images/PE-Logo -17.jpg";
-import Img18 from "./images/PE-Logo -18.png";
-import Img19 from "./images/PE-Logo -19.png";
 import Img20 from "./images/PE-Logo -20.png";
 import PEVEL from "./images/PEVEL.jpg";
 
@@ -176,24 +169,6 @@ export const Module = ({ match }) => {
                       </h2>
                     </div>
                   </div>
-                {/* <div className="title centerheading">
-                  <div className="centerit">
-                    <span className="colorborder">
-                      <em></em>
-                    </span>
-                    <h1
-                      data-aos="fade-down"
-                      data-aos-offset="100"
-                      data-aos-easing="ease-in-sine"
-                      data-aos-once="true"
-                      data-aos-duration="500"
-                    >
-                      {pagedata.products.ptitle}
-                    </h1>
-                  </div>
-                </div> */}
-                {/* <h2 data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-once='true' data-aos-duration="500" className='heading2' dangerouslySetInnerHTML={createMarkup(pagedata.products.ptitle)}></h2>
-                  <div data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-once='true' data-aos-duration="500"  dangerouslySetInnerHTML={createMarkup(pagedata.products.pdesc)}></div>                 */}
               </div>
             </div>
           </div>
@@ -348,6 +323,7 @@ export const Module = ({ match }) => {
                                                           ? "w-100"
                                                           : ""
                                                       }
+                                                      style={{ border: 'none' }} 
                                                       dangerouslySetInnerHTML={createMarkup(
                                                         powerO.title
                                                       )}
@@ -635,36 +611,18 @@ export const Module = ({ match }) => {
                         <li>
                           <img src={Img09} />
                         </li>
-                        {/* <li className="two_width">
-                          <img src={Img10} />
-                        </li> */}
                         <li>
                           <img src={Img11} />
                         </li>
                         <li>
                           <img src={Img12} />
                         </li>
-                        {/* <li className="two_width">
-                          <img src={Img13} />
-                        </li> */}
                         <li>
                           <img src={Img14} />
                         </li>
-                        {/* <li>
-                          <img src={Img15} />
-                        </li> */}
                         <li>
                           <img src={Img16} />
                         </li>
-                        {/* <li>
-                          <img src={Img17} />
-                        </li>
-                        <li className="two_width">
-                          <img src={Img18} />
-                        </li>
-                        <li>
-                          <img src={Img19} />
-                        </li> */}
                         <li className="">
                           <img src={Img20} />
                         </li>

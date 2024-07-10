@@ -101,7 +101,7 @@ export const Certification = () => {
                   <ul>
                     <li>
                       <a
-                        href="https://certificates.iecee.org/#/deliverables/CERT/73875/view"
+                        href="https://01.tiiny.site/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -173,7 +173,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://jmp.sh/l7nWR9wS"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -182,7 +182,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://jmp.sh/Nf6oAOxx"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -191,7 +191,7 @@ export const Certification = () => {
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href="https://jmp.sh/ZuuXyfZk"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
