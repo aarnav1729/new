@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
-import Banner from "./images/investor_banner2.webp";
-import Mbanner from "./images/investor-relation_mobile2.webp";
+import Banner from "./images/solarir.jpg";
+import Mbanner from "./images/solarir.jpg";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 

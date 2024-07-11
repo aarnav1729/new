@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Follow from "../images/follow.png";
 import Call from "../images/call.png";
 import Email from "../images/email.png";
-// import Address from '../images/location.png'
 import ftrlogo from "../images/ftrlogo.png";
 import Linkedin from "../images/linkedin.png";
 import Twitter from "../images/twitter.png";
-// import Instagram from '../images/instagram.png'
 import Facebook from "../images/facebook.png";
 import Youtube from "../images/youtube.png";
 import { NavLink } from "react-router-dom";
+
 export const Footer = () => {
+  const [showAddress1, setShowAddress1] = useState(true);
+  const [showAddress2, setShowAddress2] = useState(false);
+  const [showAddress3, setShowAddress3] = useState(false);
+  const [showAddress4, setShowAddress4] = useState(false);
+
+  const toggleAddress1 = () => setShowAddress1(!showAddress1);
+  const toggleAddress2 = () => setShowAddress2(!showAddress2);
+  const toggleAddress3 = () => setShowAddress3(!showAddress3);
+  const toggleAddress4 = () => setShowAddress4(!showAddress4);
+
   return (
     <>
       <footer className="pb-0">
@@ -56,7 +65,6 @@ export const Footer = () => {
                               Twitter
                             </a>
                           </li>
-                          {/* <li><a href='https://www.instagram.com/premier__energies/' target='_blank' rel='noreferrer'><img src={Instagram} alt='premier instagram'/>Instagram</a></li> */}
                           <li>
                             <a
                               href="https://www.facebook.com/premierenergies/"
@@ -96,7 +104,6 @@ export const Footer = () => {
                           <li>
                             <a href="tel:09490167793">+91-9490167793</a>
                           </li>
-                          {/* <li><a href="tel:914027744417">+91-40-27744417</a></li> */}
                         </ul>
                       </div>
                     </div>
@@ -132,20 +139,22 @@ export const Footer = () => {
                             </span>
                           </li>
                           <li>
-                        <span>
-                          <strong>For Investor Relations</strong>
-                          <a href="mailto: investors@premierenergies.com">
-                            investors@premierenergies.com
-                          </a>
-                        </span>
-                      </li>
+                            <span>
+                              <strong>For Investor Relations</strong>
+                              <a href="mailto: investors@premierenergies.com">
+                                investors@premierenergies.com
+                              </a>
+                            </span>
+                          </li>
                           <li>
-                        <span className="d-grid">
-                          <strong>For Legal queries</strong>
-                          <a href="mailto: secretarial@premierenergies.com">secretarial@premierenergies.com</a>
-                          <a href="tel:09030994222">+91-9030994222</a>
-                        </span>
-                      </li>
+                            <span className="d-grid">
+                              <strong>For Legal queries</strong>
+                              <a href="mailto: secretarial@premierenergies.com">
+                                secretarial@premierenergies.com
+                              </a>
+                              <a href="tel:09030994222">+91-9030994222</a>
+                            </span>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -154,75 +163,75 @@ export const Footer = () => {
                         <h5 className="col-12 text-center">INDIA</h5>
                         <ul className="newaddress">
                           <li>
-                            <span>
-                              <strong>Premier Energies Limited</strong>
-                              <p>
-                                <strong>Corporate Office</strong> 8<sup>th</sup>{" "}
-                                floor, Orbit Tower 1, Sy. No. 83/1, Hyderabad
-                                Knowledge City, TSIIC, Raidurgam, Hyderabad-
-                                500081, Telangana, India.
-                              </p>
-                              <p>
-                                <strong>Factory Address</strong> Sy.No.53,
-                                Annaram Village, Gummadidala – Mandal,
-                                Sangareddy District – 502313, Telangana, India.
-                              </p>
+                            <span onClick={toggleAddress1} style={{ cursor: "pointer" }}>
+                              <strong>Premier Energies Limited <i className="fas fa-chevron-down"></i></strong>
+                              {showAddress1 && (
+                                <p>
+                                  <strong>Corporate Office</strong> 8<sup>th</sup>{" "}
+                                  floor, Orbit Tower 1, Sy. No. 83/1, Hyderabad
+                                  Knowledge City, TSIIC, Raidurgam, Hyderabad-
+                                  500081, Telangana, India.
+                                </p>
+                              )}
+                              {showAddress1 && (
+                                <p>
+                                  <strong>Factory Address</strong> Sy.No.53,
+                                  Annaram Village, Gummadidala – Mandal,
+                                  Sangareddy District – 502313, Telangana, India.
+                                </p>
+                              )}
                             </span>
                           </li>
                           <li>
-                            <span>
+                            <span onClick={toggleAddress2} style={{ cursor: "pointer" }}>
                               <strong>
                                 PEPPL - Premier Energies <br />
-                                Photovoltaic Private Limited
-                              </strong>
-                              <p>
-                                Plot No. 8/B/1&2, E-City, (Fab City),
-                                Maheshwaram Mandal, Raviryala Village, Ranga
-                                Reddy District, 501359, Telangana, India.
-                              </p>
+                                Photovoltaic Private Limited <i className="fas fa-chevron-down"></i></strong>
+                              {showAddress2 && (
+                                <p>
+                                  Plot No. 8/B/1&2, E-City, (Fab City),
+                                  Maheshwaram Mandal, Raviryala Village, Ranga
+                                  Reddy District, 501359, Telangana, India.
+                                </p>
+                              )}
                             </span>
                           </li>
                           <li>
-                            <span>
+                            <span onClick={toggleAddress3} style={{ cursor: "pointer" }}>
                               <strong>
                                 PEIPL - Premier Energies
                                 <br />
-                                International Private Limited
-                              </strong>
-                              <p>
-                                Plot No 8/B/1 and 8/B/2, E city, Raviryala
-                                Village, Maheshwaram Dispensary, Maheshwaram,
-                                Rangareddy, Telangana, 501359.
-                              </p>
+                                International Private Limited <i className="fas fa-chevron-down"></i></strong>
+                              {showAddress3 && (
+                                <p>
+                                  Plot No 8/B/1 and 8/B/2, E city, Raviryala
+                                  Village, Maheshwaram Dispensary, Maheshwaram,
+                                  Rangareddy, Telangana, 501359.
+                                </p>
+                              )}
                             </span>
                           </li>
                           <li>
-                            <span>
+                            <span onClick={toggleAddress4} style={{ cursor: "pointer" }}>
                               <strong>
                                 PEGPL - Premier Energies <br /> Global
-                                Environment Private Limited
-                              </strong>
-                              <p>
-                                Plot No S-95, S-100, S-101, S-102, S-103, S-104,
-                                Maheshwaram mandal, Srinagar Village, Raviryal
-                                Industrial Area, FAB city, Rangareddy,
-                                Telangana, 501359.
-                              </p>
+                                Environment Private Limited <i className="fas fa-chevron-down"></i></strong>
+                              {showAddress4 && (
+                                <p>
+                                  Plot No S-95, S-100, S-101, S-102, S-103, S-104,
+                                  Maheshwaram mandal, Srinagar Village, Raviryal
+                                  Industrial Area, FAB city, Rangareddy,
+                                  Telangana, 501359.
+                                </p>
+                              )}
                             </span>
                           </li>
                         </ul>
-                        <p className="cinnumber"><span>CIN: U40106TG1995PLC019909</span></p>
+                        <p className="cinnumber">
+                          <span>CIN: U40106TG1995PLC019909</span>
+                        </p>
                       </div>
                     </div>
-                    {/* <div className='social full-band'>
-                  <div className='socialdesp'>
-                  <h5 className='col-12 text-center'>North America</h5>
-                    <ul className='newaddress'>
-                      <li><span><strong>Premier Energies Limited</strong>
-                      <p>Mayfair Road, Oakville, Greater Toronto Area, Canada</p></span></li>
-                    </ul>
-                  </div>
-                </div> */}
                   </div>
                   <div className="sftrrow justify-content-between">
                     <div className="sitemapbox">
@@ -265,10 +274,6 @@ export const Footer = () => {
                           Solar Cell
                         </a>
                       </h5>
-                      {/* <ul>
-                    <li><a href='https://premierenergies.com/products/solar-cell#types'>Types of Solar Cell</a></li>
-                    <li><a href='https://premierenergies.com/products/solar-cell#certifications'>CERTIFICATIONS</a></li>
-                    </ul> */}
                     </div>
                     <div className="sitemapbox">
                       <h5>
@@ -276,18 +281,7 @@ export const Footer = () => {
                           Solar Module
                         </a>
                       </h5>
-                      {/* <ul>
-                    <li><a href='https://premierenergies.com/products/solar-module#types'>Types of Solar Module</a></li>
-                    <li><a href='https://premierenergies.com/products/solar-module#coreadvantage'>CORE ADVANTAGES</a></li>
-                    <li><a href='https://premierenergies.com/products/solar-module#certifications'>CERTIFICATIONS</a></li>
-                    </ul> */}
                     </div>
-                    {/* <div className="sitemapbox">
-                      <h5>
-                        <NavLink to="/our-services">EPC</NavLink>
-                      </h5>
-                      
-                    </div> */}
                     <div className="sitemapbox">
                       <h5>
                         <NavLink to="/sustainbility">Sustainbility</NavLink>
@@ -301,7 +295,6 @@ export const Footer = () => {
                   </div>
                   <div className="copyrights d-flex justify-content-between col-12">
                     <ul className="pull-left">
-                      {/* <li>*1.6 GW under construction</li> */}
                       <li>
                         &copy; 2024 | All Rights Reserved |{" "}
                         <NavLink to="/privacy-policy">

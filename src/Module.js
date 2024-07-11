@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import { Helmet } from "react-helmet";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
 import axios from "axios";
 import Img01 from "./images/PE-Logo -1b.jpg";
@@ -21,6 +21,19 @@ import Img16 from "./images/PE-Logo -16.png";
 import Img20 from "./images/PE-Logo -20.png";
 import PEVEL from "./images/PEVEL.jpg";
 
+import cert1 from "./certifications/BISLetter63003719.pdf";
+import cert2 from "./certifications/BISR63002356.pdf";
+import cert3 from "./certifications/cTUVus.pdf";
+import cert4 from "./certifications/IEC61215_61730.pdf";
+import cert5 from "./certifications/IEC61701.pdf";
+import cert6 from "./certifications/IEC62716.pdf";
+import cert7 from "./certifications/IEC62759.pdf";
+import cert8 from "./certifications/IECMonofacial-TUVNORD.pdf";
+import cert9 from "./certifications/ISO9001.pdf";
+//import cert10 from "./certification/ISO14001.pdf";
+//import cert11 from "./certification/ISO45001.pdf";
+import cert12 from "./certifications/2024KiwaPVELTP.pdf";
+
 var decodeHTML = function (html) {
   var txt = document.createElement("textarea");
   txt.innerHTML = html;
@@ -30,6 +43,12 @@ var decodeHTML = function (html) {
 function createMarkup(content) {
   return { __html: decodeHTML(content) };
 }
+
+const openMultiplePDFs = (pdfUrls) => {
+  pdfUrls.forEach((url) => {
+    window.open(url, "_blank");
+  });
+};
 
 export const Module = ({ match }) => {
   const { slug } = useParams();
@@ -115,16 +134,25 @@ export const Module = ({ match }) => {
           rel="canonical"
           href={"https://premierenergies.com/products/" + slug}
         />
+        <style>
+          {`
+            .corefeature::before,
+            .corefeature li::before {
+              content: none !important;
+              display: none !important;
+            }
+          `}
+        </style>
       </Helmet>
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={pagedata.products.bannerpic} class="desktop-show align" />
-          <img src={pagedata.products.mbannerpic} class="mobile-show" />
+          <img src={pagedata.products.bannerpic} class="desktop-show align" alt="cert" />
+          <img src={pagedata.products.mbannerpic} class="mobile-show" alt="hero" />
           <div className="container">
             <div
               className={
-                pagedata.products.category != "SOLAR CELL"
+                pagedata.products.category !== "SOLAR CELL"
                   ? "homcolft position-absolute position-right"
                   : "homcolft position-absolute position-right"
               }
@@ -153,22 +181,22 @@ export const Module = ({ match }) => {
           <div className="container">
             <div className="row">
               <div className="web-container">
-              <div className="title centerheading">
-                    <div className="centerit">
-                      <span className="colorborder">
-                        <em></em>
-                      </span>
-                      <h2
-                        data-aos="fade-down"
-                        data-aos-offset="100"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-once="true"
-                        data-aos-duration="500"
-                      >
-                        {pagedata.products.category}
-                      </h2>
-                    </div>
+                <div className="title centerheading">
+                  <div className="centerit">
+                    <span className="colorborder">
+                      <em></em>
+                    </span>
+                    <h2
+                      data-aos="fade-down"
+                      data-aos-offset="100"
+                      data-aos-easing="ease-in-sine"
+                      data-aos-once="true"
+                      data-aos-duration="500"
+                    >
+                      {pagedata.products.category}
+                    </h2>
                   </div>
+                </div>
               </div>
             </div>
           </div>
@@ -179,18 +207,18 @@ export const Module = ({ match }) => {
                 <div className="smallcirclerightdark"></div>
                 <div className="container">
                   <div className="web-container">
-                    {pagedata.products.category == "SOLAR MODULE" && (
+                    {pagedata.products.category === "SOLAR MODULE" && (
                       <div className="celltabs main_tabs">
                         <ul>
                           <li
                             onClick={() => handleTabClick(0)}
-                            className={activeTab == 0 ? "active" : ""}
+                            className={activeTab === 0 ? "active" : ""}
                           >
                             P TYPE
                           </li>
                           <li
                             onClick={() => handleTabClick(1)}
-                            className={activeTab == 1 ? "active" : ""}
+                            className={activeTab === 1 ? "active" : ""}
                           >
                             N TYPE
                           </li>
@@ -243,7 +271,7 @@ export const Module = ({ match }) => {
                           </div>
                           <div
                             className={
-                              pagedata.products.category != "SOLAR CELL"
+                              pagedata.products.category !== "SOLAR CELL"
                                 ? subCat.power_output && subCat.power_output2
                                   ? "row cellalign3"
                                   : "row"
@@ -261,7 +289,7 @@ export const Module = ({ match }) => {
                               >
                                 <div
                                   className={
-                                    pagedata.products.category != "SOLAR CELL"
+                                    pagedata.products.category !== "SOLAR CELL"
                                       ? "row"
                                       : "row cellalign"
                                   }
@@ -269,7 +297,7 @@ export const Module = ({ match }) => {
                                   <div className="col-md-12">
                                     <div
                                       className={
-                                        pagedata.products.category !=
+                                        pagedata.products.category !==
                                         "SOLAR CELL"
                                           ? "preinfo preinfoborder"
                                           : "preinfo"
@@ -285,6 +313,7 @@ export const Module = ({ match }) => {
                                                   dangerouslySetInnerHTML={createMarkup(
                                                     coreF.title
                                                   )}
+                                                  style={{ boreder: "none" }}
                                                 ></li>
                                               )
                                             )}
@@ -306,7 +335,7 @@ export const Module = ({ match }) => {
                                                 ? subCat.poweroutputtitle
                                                 : null}
                                             </span>
-                                            {pagedata.products.category !=
+                                            {pagedata.products.category !==
                                             "SOLAR CELL" ? (
                                               <ul
                                                 className={
@@ -319,11 +348,11 @@ export const Module = ({ match }) => {
                                                   (powerO) => (
                                                     <li
                                                       className={
-                                                        subCat.types == "n"
+                                                        subCat.types === "n"
                                                           ? "w-100"
                                                           : ""
                                                       }
-                                                      style={{ border: 'none' }} 
+                                                      style={{ border: "none" }}
                                                       dangerouslySetInnerHTML={createMarkup(
                                                         powerO.title
                                                       )}
@@ -370,6 +399,7 @@ export const Module = ({ match }) => {
                                                   ? "multimodual"
                                                   : ""
                                               }
+                                              style={{ border: "none" }}
                                             >
                                               {subCat.power_output2.map(
                                                 (powerO2) => (
@@ -398,6 +428,7 @@ export const Module = ({ match }) => {
                                                   dangerouslySetInnerHTML={createMarkup(
                                                     coreF.title
                                                   )}
+                                                  style={{ border: "none" }} // Removing border
                                                 ></li>
                                               )
                                             )}
@@ -448,7 +479,7 @@ export const Module = ({ match }) => {
                                 data-aos-once="true"
                                 data-aos-duration="500"
                               >
-                                <img src={subCat.cate_img} />
+                                <img src={subCat.cate_img} alt="cert" />
                               </div>
                             </div>
                           </div>
@@ -464,6 +495,7 @@ export const Module = ({ match }) => {
                                           <a
                                             href={downloadData.link}
                                             target="_blank"
+                                            rel="noopener noreferrer"
                                             dangerouslySetInnerHTML={createMarkup(
                                               downloadData.text
                                             )}
@@ -489,6 +521,7 @@ export const Module = ({ match }) => {
                                             <a
                                               href={downloadData.link}
                                               target="_blank"
+                                              rel = "nopoener noreferrer"
                                               dangerouslySetInnerHTML={createMarkup(
                                                 downloadData.text
                                               )}
@@ -528,10 +561,10 @@ export const Module = ({ match }) => {
                         {pagedata.p_config.map((pConfig, index) => (
                           <li>
                             <span>
-                              {index == 0 ? "Container" : ""}
-                              {index == 1 ? "Pieces per Pallet" : ""}
-                              {index == 2 ? "Pallets per Container" : ""}
-                              {index == 3 ? "Pieces per Container" : ""}
+                              {index === 0 ? "Container" : ""}
+                              {index === 1 ? "Pieces per Pallet" : ""}
+                              {index === 2 ? "Pallets per Container" : ""}
+                              {index === 3 ? "Pieces per Container" : ""}
                             </span>
                             {pConfig.data.map((finalData) => (
                               <>
@@ -580,51 +613,122 @@ export const Module = ({ match }) => {
                       <h4 className="subhead">Quality Certified Test</h4>
                     </div>
                     <div className="pevel_cert">
-                      <img src={PEVEL} alt="pvel-certification" />
+                      <a
+                        href={cert12}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img src={PEVEL} alt="certification 01" />
+                      </a>
                     </div>
                     <div className="certificates new_layout">
                       <ul>
                         <li>
-                          <img src={Img01} />
+                          <a
+                            href={cert3}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img01} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img02} />
+                          <a
+                            href={cert4}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img02} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img03} />
+                          <a
+                            href={cert6}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img03} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img04} />
+                          <a
+                            href={cert5}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img04} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img05} />
+                          <img src={Img05} alt="cert"/>
                         </li>
                         <li>
-                          <img src={Img06} />
+                          <img src={Img06} alt="cert" />
                         </li>
                         <li>
-                          <img src={Img07} />
+                          <img src={Img07} alt="cert" />
                         </li>
                         <li>
-                          <img src={Img08} />
+                          <img src={Img08} alt="cert"/>
                         </li>
                         <li>
-                          <img src={Img09} />
+                          <a
+                            href={cert7}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img09} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img11} />
+                          <a
+                            href={cert1}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              openMultiplePDFs([cert1, cert2]);
+                            }}
+                          >
+                            <img src={Img11} alt="certification 12" />
+                          </a>
+                        </li>
+
+                        <li>
+                        <a
+                            href={cert4}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img12} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img12} />
+                        <a
+                            href={cert3}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img14} alt="certification 01" />
+                          </a>
                         </li>
                         <li>
-                          <img src={Img14} />
-                        </li>
-                        <li>
-                          <img src={Img16} />
+                          <a
+                            href={cert8}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img16} alt="certification 01" />
+                          </a>
                         </li>
                         <li className="">
-                          <img src={Img20} />
+                          <a
+                            href={cert9}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src={Img20} alt="certification 01" />
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -640,13 +744,6 @@ export const Module = ({ match }) => {
                     pagedata.products.fline
                   )}
                 ></h5>
-                {/* <div className='mbtns'>
-                      <ul>
-                        <li><a href='#'>Warranty Manual</a></li>
-                        <li><a href='#'>Installation Manual</a></li>
-                        <li><a href='#'>Cleaning Manual</a></li>
-                      </ul>
-                    </div> */}
               </div>
             </div>
           </div>

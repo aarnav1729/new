@@ -1,29 +1,65 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import Banner from "./images/awards-banner.jpg";
+import PEVEL from "./images/PEVEL.jpg";
 import Img01 from "./images/certificate01.png";
-import Img02 from "./images/certificate02.png";
+import Img25 from "./images/25.png";
 import Img03 from "./images/certificate03.png";
 import Img04 from "./images/certificate04.png";
 import Img05 from "./images/certificate05.png";
-import Img06 from "./images/certificate06.png";
-import Img07 from "./images/certificate07.png";
 import Img08 from "./images/certificate08.png";
-import Img09 from "./images/certificate09.png";
 import Img10 from "./images/certificate10.png";
 import Img11 from "./images/certificate11.png";
-import Img12 from "./images/certificate12.png";
-import Img13 from "./images/certificate13.png";
-import Img14 from "./images/certificate14.png";
 import Img15 from "./images/certificate15.png";
-import Img16 from "./images/certificate16.png";
 import Img17 from "./images/certificate17.png";
 import Img18 from "./images/certificate18.png";
-import Img19 from "./images/certificate19.png";
 import Img20 from "./images/certificate20.png";
-import PEVEL from "./images/PEVEL.jpg";
+
+
+//import cert1 from "./certification/BISLetter63003719.pdf";
+//import cert2 from "./certification/BISR63003719.pdf";
+//import cert3 from "./certification/cTUVus.pdf";
+//import cert4 from "./certification/IEC61215_61730.pdf";
+//import cert5 from "./certification/IEC61701.pdf";
+//import cert6 from "./certification/IEC62716.pdf";
+//import cert7 from "./certification/IEC62759.pdf";
+//import cert8 from "./certification/IECMonofacial-TUVNORD.pdf";
+//import cert9 from "./certification/ISO9001.pdf";
+//import cert10 from "./certification/ISO14001.pdf";
+//import cert11 from "./certification/ISO45001.pdf";
+//import cert12 from "./certification/2024KiwaPVELTP.pdf";
+
+
+
+//import Img01 from "./images/PE-Logo -1b.jpg";
+//import Img02 from "./images/PE-Logo -2.jpg";
+//import Img03 from "./images/PE-Logo -3.jpg";
+//import Img04 from "./images/PE-Logo -4.jpg";
+//import Img05 from "./images/PE-Logo -5.jpg";
+//import Img06 from "./images/PE-Logo -6.jpg";
+//import Img07 from "./images/PE-Logo -7.jpg";
+//import Img08 from "./images/PE-Logo -8.jpg";
+//import Img09 from "./images/PE-Logo -9.jpg";
+//import Img11 from "./images/PE-Logo -11.png";
+//import Img12 from "./images/PE-Logo -12.png";
+//import Img14 from "./images/PE-Logo -14.jpg";
+//import Img16 from "./images/PE-Logo -16.png";
+//import Img20 from "./images/PE-Logo -20.png";
+//import PEVEL from "./images/PEVEL.jpg";
+
+const bannerStyle = {
+  width: '100%',
+  height: 'auto',
+  objectFit: 'cover',
+  objectPosition: 'center top'
+};
+
+const sectionStyle = {
+  padding: 0,
+  backgroundColor: '#121212'
+};
 
 export const Certification = () => {
   return (
@@ -51,11 +87,20 @@ export const Certification = () => {
           name="og:description"
           content="Premier Energies Solar Modules have won 'Top performer' in PV Evolution Labs (PVEL)' 2023 PV module reliability scorecard."
         ></meta>
+        <style>{`
+          .banner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center top;
+            margin-top: 50px; /* Adjust this value as needed */
+          }
+        `}</style>
       </Helmet>
       <Header />
-      <section id="banner" className="p-0">
+      <section id="banner" style={sectionStyle}>
         <div className="banner">
-          <img src={Banner} />
+          <img src={Banner} alt="Certifications Banner" style={bannerStyle} />
         </div>
       </section>
       <section id="certification">
@@ -105,7 +150,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img01} />
+                        <img src={Img01} alt="img1" />
                       </a>
                     </li>
                     <li>
@@ -114,7 +159,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img03} />
+                        <img src={Img03} alt="img3"/>
                       </a>
                     </li>
                     <li>
@@ -123,7 +168,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img04} />
+                        <img src={Img04} alt="img4"/>
                       </a>
                     </li>
                     <li>
@@ -132,7 +177,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img05} />
+                        <img src={Img05} alt="img5"/>
                       </a>
                     </li>
                     <li>
@@ -141,7 +186,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img08} />
+                        <img src={Img08} alt="img8"/>
                       </a>
                     </li>
                     <li>
@@ -150,7 +195,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img10} />
+                        <img src={Img10} alt="img10" />
                       </a>
                     </li>
                     <li>
@@ -159,7 +204,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img11} />
+                        <img src={Img11} alt="img11"/>
                       </a>
                     </li>
                     <li>
@@ -168,7 +213,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img15} />
+                        <img src={Img15} alt="img15"/>
                       </a>
                     </li>
                     <li>
@@ -177,7 +222,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img16} />
+                        <img src={Img25} alt="img25"/>
                       </a>
                     </li>
                     <li>
@@ -186,7 +231,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img17} />
+                        <img src={Img17} alt="img17"/>
                       </a>
                     </li>
                     <li>
@@ -195,7 +240,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img18} />
+                        <img src={Img18} alt="img18"/>
                       </a>
                     </li>
                     <li>
@@ -204,7 +249,7 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img20} />
+                        <img src={Img20} alt="img20"/>
                       </a>
                     </li>
                   </ul>
