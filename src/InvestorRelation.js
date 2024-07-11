@@ -90,8 +90,8 @@ export const InvestorRealation = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} className="desktop-show" />
-          <img src={Mbanner} className="mobile-show mobilebanner" />
+          <img src={Banner} className="desktop-show" alt="banner"/>
+          <img src={Mbanner} className="mobile-show mobilebanner" alt="banner" />
         </div>
       </section>
       <div class="breadcrum pt-2">
