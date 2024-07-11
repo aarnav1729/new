@@ -40,7 +40,8 @@ import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import { PiCaretLeftThin, PiCaretRightThin } from "react-icons/pi";
-console.log("about.js");
+import cert12 from "./certifications/2024KiwaPVELTP.pdf";
+
 export const Home = () => {
   const [state, setState] = useState({
     wf1: 1,
@@ -246,7 +247,7 @@ export const Home = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} alt="award"/>
+          <img src={Banner} alt="award" />
           <div className="container">
             <div className="homcolft position-absolute position-right left">
               <span className="colorborder">
@@ -763,17 +764,17 @@ export const Home = () => {
                               <Slider {...settings}>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Cell01} alt="award"/>
+                                    <img src={Cell01} alt="award" />
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Cell03} alt="award"/>
+                                    <img src={Cell03} alt="award" />
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Cell02} alt="award"/>
+                                    <img src={Cell02} alt="award" />
                                   </div>
                                 </div>
                               </Slider>
@@ -839,17 +840,17 @@ export const Home = () => {
                               <Slider {...settings}>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module02} alt="award"/>
+                                    <img src={Module02} alt="award" />
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module03} alt="award"/>
+                                    <img src={Module03} alt="award" />
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module04} alt="award"/>
+                                    <img src={Module04} alt="award" />
                                   </div>
                                 </div>
                               </Slider>
@@ -923,12 +924,12 @@ export const Home = () => {
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Zero02} alt="award"/>
+                                    <img src={Zero02} alt="award" />
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module01} alt="award"/>
+                                    <img src={Module01} alt="award" />
                                   </div>
                                 </div>
                               </Slider>
@@ -963,27 +964,27 @@ export const Home = () => {
                           <Slider {...settings2}>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery01} alt="award"/>
+                                <img src={Gallery01} alt="award" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery02} alt="award"/>
+                                <img src={Gallery02} alt="award" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery03} alt="award"/>
+                                <img src={Gallery03} alt="award" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery04} alt="award"/>
+                                <img src={Gallery04} alt="award" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery05} alt="award"/>
+                                <img src={Gallery05} alt="award" />
                               </div>
                             </div>
                           </Slider>
@@ -1178,7 +1179,6 @@ export const Home = () => {
                         className="journey_wrapper"
                         style={{
                           width: "100%",
-                          transform: `translateX(${-scrollPosition}px)`,
                         }}
                       >
                         <div className="Journey_svg_container">
@@ -1316,7 +1316,15 @@ export const Home = () => {
                             employee engagement policies.{" "}
                           </p>
                           <div className="pevel_cert">
-                            <img src={PEVEL} alt="pvel-certification" />
+                            <li>
+                              <a
+                                href={cert12}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img src={PEVEL} alt="img1" />
+                              </a>
+                            </li>
                           </div>
 
                           <div
@@ -1328,25 +1336,25 @@ export const Home = () => {
                             data-aos-duration="500"
                           >
                             <div className="awardsbox">
-                              <img src={award01} alt="award"/>
+                              <img src={award01} alt="award" />
                             </div>
                             <div className="awardsbox">
-                              <img src={award02} alt="award"/>
+                              <img src={award02} alt="award" />
                             </div>
                             <div className="awardsbox">
-                              <img src={award03} alt="award"/>
+                              <img src={award03} alt="award" />
                             </div>
                             <div className="awardsbox">
-                              <img src={award04} alt="award"/>
+                              <img src={award04} alt="award" />
                             </div>
                             <div className="awardsbox">
-                              <img src={award05} alt="award"/>
+                              <img src={award05} alt="award" />
                             </div>
                             <div className="awardsbox">
-                              <img src={award07} alt="award"/>
+                              <img src={award07} alt="award" />
                             </div>
                             <div className="awardsbox">
-                              <img src={award06} alt="award"/>
+                              <img src={award06} alt="award" />
                             </div>
                           </div>
                         </div>
@@ -1366,7 +1374,7 @@ export const Home = () => {
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Awards02} alt="award"/>
+                                <img src={Awards02} alt="award" />
                               </div>
                             </div>
                             <div>
