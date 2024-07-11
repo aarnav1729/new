@@ -28,9 +28,7 @@ import Zero02 from "./images/zero-liquid-02.jpg";
 import Solarimg from "./images/hand-video2.mp4";
 import JourneySvg from "./components/Svg/JourneySvg";
 import { NavLink } from "react-router-dom";
-import Premiervideo from "./images/premier-video.mp4";
 import asp from "./images/asp.mp4";
-import Mpremiervideo from "./images/mpremier-video.mp4";
 import award01 from "./images/award_01.webp";
 import award02 from "./images/award_02.webp";
 import award03 from "./images/award_03.webp";
@@ -248,7 +246,7 @@ export const Home = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} />
+          <img src={Banner} alt="award"/>
           <div className="container">
             <div className="homcolft position-absolute position-right left">
               <span className="colorborder">
@@ -630,7 +628,6 @@ export const Home = () => {
                           </div>
                           <div className="App">
                             <div className="countnum">
-                              {/* {isVisible ? <CountUp start={(state.workforce===1) ? 1 : 1.4} end={1.4} duration={2} separator=" " decimals={1}  decimal="."  onEnd={()=> setState({ workforce:1.4 })} /> : <CountUp start={1} end={1.4} duration={0} />} GW                 */}
                               266.26 MW
                               <div className="labelcont">
                                 GROUND MOUNT SOLAR PROJECTS EXECUTED
@@ -766,17 +763,17 @@ export const Home = () => {
                               <Slider {...settings}>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Cell01} />
+                                    <img src={Cell01} alt="award"/>
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Cell03} />
+                                    <img src={Cell03} alt="award"/>
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Cell02} />
+                                    <img src={Cell02} alt="award"/>
                                   </div>
                                 </div>
                               </Slider>
@@ -842,17 +839,17 @@ export const Home = () => {
                               <Slider {...settings}>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module02} />
+                                    <img src={Module02} alt="award"/>
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module03} />
+                                    <img src={Module03} alt="award"/>
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module04} />
+                                    <img src={Module04} alt="award"/>
                                   </div>
                                 </div>
                               </Slider>
@@ -921,17 +918,17 @@ export const Home = () => {
                               <Slider {...settings}>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Zero01} />
+                                    <img src={Zero01} alt="award" />
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Zero02} />
+                                    <img src={Zero02} alt="award"/>
                                   </div>
                                 </div>
                                 <div>
                                   <div className="homeslider">
-                                    <img src={Module01} />
+                                    <img src={Module01} alt="award"/>
                                   </div>
                                 </div>
                               </Slider>
@@ -966,27 +963,27 @@ export const Home = () => {
                           <Slider {...settings2}>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery01} />
+                                <img src={Gallery01} alt="award"/>
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery02} />
+                                <img src={Gallery02} alt="award"/>
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery03} />
+                                <img src={Gallery03} alt="award"/>
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery04} />
+                                <img src={Gallery04} alt="award"/>
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Gallery05} />
+                                <img src={Gallery05} alt="award"/>
                               </div>
                             </div>
                           </Slider>
@@ -1331,47 +1328,26 @@ export const Home = () => {
                             data-aos-duration="500"
                           >
                             <div className="awardsbox">
-                              <img src={award01} />
+                              <img src={award01} alt="award"/>
                             </div>
                             <div className="awardsbox">
-                              <img src={award02} />
+                              <img src={award02} alt="award"/>
                             </div>
                             <div className="awardsbox">
-                              <img src={award03} />
+                              <img src={award03} alt="award"/>
                             </div>
                             <div className="awardsbox">
-                              <img src={award04} />
+                              <img src={award04} alt="award"/>
                             </div>
                             <div className="awardsbox">
-                              <img src={award05} />
+                              <img src={award05} alt="award"/>
                             </div>
                             <div className="awardsbox">
-                              <img src={award07} />
+                              <img src={award07} alt="award"/>
                             </div>
                             <div className="awardsbox">
-                              <img src={award06} />
+                              <img src={award06} alt="award"/>
                             </div>
-                            {/* <div className="awardsbox">
-                              <img src={award08} />
-                            </div>
-                            <div className="awardsbox">
-                              <img src={award09} />
-                            </div>
-                            <div className="awardsbox">
-                              <img src={award10} />
-                            </div>
-                            <div className="awardsbox">
-                              <img src={award11} />
-                            </div>
-                            <div className="awardsbox">
-                              <img src={award12} />
-                            </div>
-                            <div className="awardsbox">
-                              <img src={award13} />
-                            </div>
-                            <div className="awardsbox">
-                              <img src={award14} />
-                            </div> */}
                           </div>
                         </div>
                         <div
@@ -1385,22 +1361,22 @@ export const Home = () => {
                           <Slider {...settings2}>
                             <div>
                               <div className="homeslider">
-                                <img src={Awards01} />
+                                <img src={Awards01} alt="award1" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Awards02} />
+                                <img src={Awards02} alt="award"/>
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Awards03} />
+                                <img src={Awards03} alt="award" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Awards04} />
+                                <img src={Awards04} alt="award" />
                               </div>
                             </div>
                           </Slider>

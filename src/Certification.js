@@ -17,21 +17,18 @@ import Img17 from "./images/certificate17.png";
 import Img18 from "./images/certificate18.png";
 import Img20 from "./images/certificate20.png";
 
-
-//import cert1 from "./certification/BISLetter63003719.pdf";
-//import cert2 from "./certification/BISR63003719.pdf";
-//import cert3 from "./certification/cTUVus.pdf";
-//import cert4 from "./certification/IEC61215_61730.pdf";
-//import cert5 from "./certification/IEC61701.pdf";
-//import cert6 from "./certification/IEC62716.pdf";
-//import cert7 from "./certification/IEC62759.pdf";
-//import cert8 from "./certification/IECMonofacial-TUVNORD.pdf";
-//import cert9 from "./certification/ISO9001.pdf";
-//import cert10 from "./certification/ISO14001.pdf";
-//import cert11 from "./certification/ISO45001.pdf";
-//import cert12 from "./certification/2024KiwaPVELTP.pdf";
-
-
+import cert1 from "./certifications/BISLetter63003719.pdf";
+import cert2 from "./certifications/BISR63002356.pdf";
+import cert3 from "./certifications/cTUVus.pdf";
+import cert4 from "./certifications/IEC61215_61730.pdf";
+import cert5 from "./certifications/IEC61701.pdf";
+import cert6 from "./certifications/IEC62716.pdf";
+import cert7 from "./certifications/IEC62759.pdf";
+import cert8 from "./certifications/IECMonofacial-TUVNORD.pdf";
+import cert9 from "./certifications/ISO9001.pdf";
+import cert10 from "./certifications/ISO14001.pdf";
+import cert11 from "./certifications/ISO45001.pdf";
+import cert12 from "./certifications/2024KiwaPVELTP.pdf";
 
 //import Img01 from "./images/PE-Logo -1b.jpg";
 //import Img02 from "./images/PE-Logo -2.jpg";
@@ -50,15 +47,15 @@ import Img20 from "./images/certificate20.png";
 //import PEVEL from "./images/PEVEL.jpg";
 
 const bannerStyle = {
-  width: '100%',
-  height: 'auto',
-  objectFit: 'cover',
-  objectPosition: 'center top'
+  width: "100%",
+  height: "auto",
+  objectFit: "cover",
+  objectPosition: "center top",
 };
 
 const sectionStyle = {
   padding: 0,
-  backgroundColor: '#121212'
+  backgroundColor: "#121212",
 };
 
 export const Certification = () => {
@@ -140,26 +137,31 @@ export const Certification = () => {
                   </p>
                 </div>
                 <div className="pevel_cert">
-                  <img src={PEVEL} alt="pvel-certification" />
+                  <li>
+                    <a href={cert12} target="_blank" rel="noopener noreferrer">
+                      <img src={PEVEL} alt="img1" />
+                    </a>
+                  </li>
                 </div>
                 <div className="certificates">
                   <ul>
                     <li>
-                      <a
-                        href="https://01.tiiny.site/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <a href={cert4} target="_blank" rel="noopener noreferrer">
                         <img src={Img01} alt="img1" />
                       </a>
                     </li>
                     <li>
+                      <a href={cert4} target="_blank" rel="noopener noreferrer">
+                        <img src={Img03} alt="img3" />
+                      </a>
+                    </li>
+                    <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href={cert4}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img03} alt="img3"/>
+                        <img src={Img04} alt="img4" />
                       </a>
                     </li>
                     <li>
@@ -168,30 +170,21 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img04} alt="img4"/>
+                        <img src={Img05} alt="img5" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href={cert3}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img05} alt="img5"/>
+                        <img src={Img08} alt="img8" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://www.certipedia.com/companies/631490/product_certificates?locale=en"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img src={Img08} alt="img8"/>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://certificates.iecee.org/#/deliverables/CERT/1547050/view"
+                        href={cert8}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -204,52 +197,52 @@ export const Certification = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img11} alt="img11"/>
+                        <img src={Img11} alt="img11" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://www.iafcertsearch.org/certification/tchJrf4XTc66YmrNG6VlR09z"
+                        href={cert6}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img15} alt="img15"/>
+                        <img src={Img15} alt="img15" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://jmp.sh/l7nWR9wS"
+                        href={cert9}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img25} alt="img25"/>
+                        <img src={Img25} alt="img25" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://jmp.sh/Nf6oAOxx"
+                        href={cert10}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img17} alt="img17"/>
+                        <img src={Img17} alt="img17" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://jmp.sh/ZuuXyfZk"
+                        href={cert11}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img18} alt="img18"/>
+                        <img src={Img18} alt="img18" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://scorecard.pvel.com/top-performers/?manuf_name=2091"
+                        href={cert12}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <img src={Img20} alt="img20"/>
+                        <img src={Img20} alt="img20" />
                       </a>
                     </li>
                   </ul>
