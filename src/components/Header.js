@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Logo from "../images/premier-energies.png";
@@ -139,6 +139,9 @@ export const Header = () => {
                     <li className="desktop-show">
                       <NavLink to="/contact-us">Contact Us</NavLink>
                     </li>
+                    <li className="desktop-show">
+                      <NavLink to="/solar-calculator">Solar Calculator</NavLink>
+                    </li>
                     <li>
                       <button
                         onClick={handleToggle}
@@ -254,6 +257,9 @@ export const Header = () => {
                           </li>
                           <li>
                             <NavLink to="/contact-us">Contact Us</NavLink>
+                          </li>
+                          <li>
+                            <NavLink to="/solar-calculator">Solar Calculator</NavLink>
                           </li>
                         </ul>
                       </div>

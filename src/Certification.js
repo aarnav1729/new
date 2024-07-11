@@ -17,34 +17,14 @@ import Img17 from "./images/certificate17.png";
 import Img18 from "./images/certificate18.png";
 import Img20 from "./images/certificate20.png";
 
-import cert1 from "./certifications/BISLetter63003719.pdf";
-import cert2 from "./certifications/BISR63002356.pdf";
 import cert3 from "./certifications/cTUVus.pdf";
 import cert4 from "./certifications/IEC61215_61730.pdf";
-import cert5 from "./certifications/IEC61701.pdf";
 import cert6 from "./certifications/IEC62716.pdf";
-import cert7 from "./certifications/IEC62759.pdf";
 import cert8 from "./certifications/IECMonofacial-TUVNORD.pdf";
 import cert9 from "./certifications/ISO9001.pdf";
 import cert10 from "./certifications/ISO14001.pdf";
 import cert11 from "./certifications/ISO45001.pdf";
 import cert12 from "./certifications/2024KiwaPVELTP.pdf";
-
-//import Img01 from "./images/PE-Logo -1b.jpg";
-//import Img02 from "./images/PE-Logo -2.jpg";
-//import Img03 from "./images/PE-Logo -3.jpg";
-//import Img04 from "./images/PE-Logo -4.jpg";
-//import Img05 from "./images/PE-Logo -5.jpg";
-//import Img06 from "./images/PE-Logo -6.jpg";
-//import Img07 from "./images/PE-Logo -7.jpg";
-//import Img08 from "./images/PE-Logo -8.jpg";
-//import Img09 from "./images/PE-Logo -9.jpg";
-//import Img11 from "./images/PE-Logo -11.png";
-//import Img12 from "./images/PE-Logo -12.png";
-//import Img14 from "./images/PE-Logo -14.jpg";
-//import Img16 from "./images/PE-Logo -16.png";
-//import Img20 from "./images/PE-Logo -20.png";
-//import PEVEL from "./images/PEVEL.jpg";
 
 const bannerStyle = {
   width: "100%",

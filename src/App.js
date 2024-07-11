@@ -22,6 +22,7 @@ import { Terms } from "./Terms";
 import { InvestorRealation } from "./InvestorRelation";
 import { InvestorRelationDetial } from "./InvestorRelationDetial";
 import NewsroomNew from "./NewsroomNew";
+import SolarCalc from "./solar-calculator";
 import AckLetter from "./AckLetter";
 
 console.log("app.js");
@@ -78,6 +79,7 @@ const App = () => {
           ></Route>
           <Route exact path="/career" element={<Career />}></Route>
           <Route exact path="/newsroom" element={<NewsroomNew />}></Route>
+          <Route exact path="/solar-calculator" element={<SolarCalc />}></Route>
           <Route path="*" element={<Error />}></Route>          
         </Routes>
       </Router>

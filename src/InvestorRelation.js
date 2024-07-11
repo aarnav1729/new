@@ -172,13 +172,12 @@ export const InvestorRealation = () => {
                             </div>
                           );
                         } else {
-                          // Handle case where item.icon is null or undefined
+                          
                           return null;
                         }
                       })}
                     </div>
                   </>
-                  // Render other components
                 )}
               </div>
             </div>
