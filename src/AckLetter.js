@@ -6,14 +6,11 @@ import {
 } from "./components/Utils";
 import Header from "./components/Header";
 import { Footer } from "./components/Footer";
-import { ReactSession } from "react-client-session";
-import { SlideshowLightbox } from "lightbox.js-react";
 
 const AckLetter = () => {
   const grievantName = getGrievantName();
   const caseId = getCaseId();
   const formSubmitted = getFormSubmitted();
-  // console.log(formSubmitted);
 
   return (
     <>
@@ -38,7 +35,7 @@ const AckLetter = () => {
         <div className="privacy-policy">
           <div className="container">
             <div className="row justify-content-center">
-              {formSubmitted == 1 ? (
+              {formSubmitted === 1 ? (
                 <div className="col-md-8 col-12">
                   <div>
                     <div className="">

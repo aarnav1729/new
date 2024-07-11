@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import pdg from "./images/pdf.png";
-import siteData from "./json/investorSiteMap.json";
 import DownloadIcon from "./components/Svg/DownloadIcon";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-// import PDfIcon from "./components/Svg/PDfIcon";
 
 const CustomAcc = ({ onCategoryHeadingChange }) => {
   const [pagedata, setPagedata] = useState([]);
-  const { slug } = useParams(); // Fetch the slug from the URL
+  const { slug } = useParams(); 
 
   useEffect(() => {
     let mounted = true;
@@ -17,7 +15,7 @@ const CustomAcc = ({ onCategoryHeadingChange }) => {
         const response = await axios.get(
           "https://www.premierenergies.com/api/investor_relation.php"
         );
-        console.log("API response:", response.data); // Log the API response
+        console.log("API response:", response.data); 
         if (mounted) {
           setPagedata(response.data);
         }
@@ -42,10 +40,7 @@ const CustomAcc = ({ onCategoryHeadingChange }) => {
   console.log("this is the year", selectedYear);
 
   useEffect(() => {
-    // Find the category matching the slug from the URL
     const currentCategory = pagedata.find((item) => item.slug === slug);
-    // console.log("slug item selected ", currentCategory.heading);
-    // onCategoryHeadingChange(currentCategory );
     if (currentCategory) {
       setSelectedCategory(currentCategory.id);
       console.log("this is the cat", selectedCategory);
@@ -83,10 +78,9 @@ const CustomAcc = ({ onCategoryHeadingChange }) => {
     );
     setActiveHumberger(false);
 
-    // Scroll to the top of the page
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Optional: Smooth scrolling animation
+      behavior: "smooth", 
     });
   };
 

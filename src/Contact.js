@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import Banner from "./images/contact_us.jpg";
 import { Footer } from "./components/Footer";
 import { Helmet } from "react-helmet";
-import GravienceForm from "./components/GravienceForm";
-import { Formik } from "formik";
 import Gravience from "./components/Gravience";
 
 export const Contact = () => {
@@ -39,7 +37,7 @@ export const Contact = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} />
+          <img src={Banner} alt="img"/>
           <div className="container">
             <div className="homcolft position-absolute position-right left">
               <span className="colorborder">
@@ -160,32 +158,6 @@ export const Contact = () => {
                   </div>
                   <div className="address social socialdesp  ">
                     <h4>Email</h4>
-                    {/* <ul className="email">
-                      <li>
-                        <span>
-                          <strong>For any media & general queries</strong>
-                          <a href="mailto:Grievance@Premierenergies.com">
-                            hello@Premierenergies.com
-                          </a>
-                        </span>
-                      </li>
-                      <li>
-                        <span>
-                          <strong>For Sales & Marketing queries</strong>
-                          <a href="mailto:sales@premierenergies.com">
-                            sales@premierenergies.com
-                          </a>
-                        </span>
-                      </li>
-                      <li>
-                        <span>
-                          <strong>For Career Opportunities</strong>
-                          <a href="mailto:hr@premierenergies.com">
-                            hr@premierenergies.com
-                          </a>
-                        </span>
-                      </li>
-                    </ul> */}
                     <ul class="email">
                       <li>
                         <span>
@@ -279,24 +251,12 @@ export const Contact = () => {
                     </p>
                   </div>
                 </div>
-                {/* <div className="premierenergies justify-content-start   ">
-                <h3>North America</h3>
-                <div className="address ">
-                <h4>Premier Energies Limited</h4>
-                <p>
-                Mayfair Road, Oakville, Greater Toronto Area, Canada
-                </p>
-               
-                  </div>
-                
-                </div> */}
               </div>
             </div>
           </div>
         </div>
       </section>
       <Gravience />
-      {/* <GravienceForm /> */}
       <Footer />
     </>
   );

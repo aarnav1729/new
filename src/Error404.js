@@ -1,12 +1,12 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Aos from 'aos';
+import Aos from "aos";
 import "aos/dist/aos.css";
 
 const Error404 = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
- }, []);
+  }, []);
   return (
     <>
       <div id="notfound">
@@ -15,8 +15,10 @@ const Error404 = () => {
             <h1>404</h1>
           </div>
           <h2>WE ARE SORRY, PAGE NOT FOUND!</h2>
-          <p>THE PAGE YOU ARE LOOKING FOR MIGHT HAVE BEEN REMOVED HAD ITS NAME
-            CHANGED OR IS TEMPORARILY UNAVAILABLE.</p>
+          <p>
+            THE PAGE YOU ARE LOOKING FOR MIGHT HAVE BEEN REMOVED HAD ITS NAME
+            CHANGED OR IS TEMPORARILY UNAVAILABLE.
+          </p>
           <NavLink to="/">back to homepage</NavLink>
         </div>
       </div>

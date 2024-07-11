@@ -2,9 +2,6 @@ import React from "react";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import Banner from "./images/service-banner.jpg";
-import Service01 from "./images/service01.jpg";
-import Service02 from "./images/service02.jpg";
-import Service03 from "./images/service03.jpg";
 import Diverse from "./images/canal-top.jpg";
 import Diverse1 from "./images/floating.jpg";
 import Diverse2 from "./images/asbestos.jpg";
@@ -85,7 +82,7 @@ export const Service = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} />
+          <img src={Banner} alt="img" />
           <div className="container">
             <div className="homcolft position-absolute position-right">
               <span className="colorborder">
@@ -153,167 +150,6 @@ export const Service = () => {
             </div>
           </div>
           <div className="infra">
-            {/* <div className="infrabox" id="rooftop">
-              <div className="largecircleright"></div>
-              <div className="smallcirclerightdark"></div>
-              <div className="container">
-                <div className="web-container">
-                  <div className="infracenter">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="infracont">
-                          <div className="infraheading">
-                            <h2
-                              data-aos="fade-down"
-                              data-aos-offset="100"
-                              data-aos-easing="ease-in-sine"
-                              data-aos-once="true"
-                              data-aos-duration="500"
-                            >
-                              Rooftop
-                            </h2>
-                          </div>
-                          <p
-                            data-aos="fade-up"
-                            data-aos-offset="100"
-                            data-aos-easing="ease-in-sine"
-                            data-aos-once="true"
-                            data-aos-duration="500"
-                          >
-                            Premier Energies' solar rooftop solutions involve
-                            the installation of solar panel on rooftops, which
-                            optimize space for solar power energy conversion.
-                            Suitable for commercial buildings, industrial
-                            complexes and residential properties, they help
-                            generate long-term savings by significantly reducing
-                            electricity costs.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div
-                          className="infraslider"
-                          data-aos="fade-up"
-                          data-aos-offset="100"
-                          data-aos-easing="ease-in-sine"
-                          data-aos-once="true"
-                          data-aos-duration="500"
-                        >
-                          <img src={Service01} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="infrabox" id="Ground-mounted">
-              <div className="largecircleleft"></div>
-              <div className="smallcirclerightdarkleft"></div>
-              <div className="container">
-                <div className="web-container">
-                  <div className="infracenter">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="infracont">
-                          <div className="infraheading">
-                            <h2
-                              data-aos="fade-down"
-                              data-aos-offset="100"
-                              data-aos-easing="ease-in-sine"
-                              data-aos-once="true"
-                              data-aos-duration="500"
-                            >
-                              Ground Mounted
-                            </h2>
-                          </div>
-                          <p
-                            data-aos="fade-up"
-                            data-aos-offset="100"
-                            data-aos-easing="ease-in-sine"
-                            data-aos-once="true"
-                            data-aos-duration="500"
-                          >
-                            Premier Energies' ground mounted solar panels are
-                            ideal for greater energy conversion in areas of
-                            higher consumption, basis the availability of
-                            necessary space. Being on the ground, the panels can
-                            be pointed in the optimal direction to maximize sun
-                            exposure, thereby making them an efficient and
-                            cost-effective solution.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div
-                          className="infraslider"
-                          data-aos="fade-up"
-                          data-aos-offset="100"
-                          data-aos-easing="ease-in-sine"
-                          data-aos-once="true"
-                          data-aos-duration="500"
-                        >
-                          <img src={Service02} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="infrabox" id="water-pump">
-              <div className="largecircleright"></div>
-              <div className="smallcirclerightdark"></div>
-              <div className="container">
-                <div className="web-container">
-                  <div className="infracenter">
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="infracont">
-                          <div className="infraheading">
-                            <h2
-                              data-aos="fade-down"
-                              data-aos-offset="100"
-                              data-aos-easing="ease-in-sine"
-                              data-aos-once="true"
-                              data-aos-duration="500"
-                            >
-                              Water Pumps
-                            </h2>
-                          </div>
-                          <p
-                            data-aos="fade-up"
-                            data-aos-offset="100"
-                            data-aos-easing="ease-in-sine"
-                            data-aos-once="true"
-                            data-aos-duration="500"
-                          >
-                            Solar energy powered water pumps are a boon for the
-                            agriculture industry, empowering farmers to do their
-                            part in India's green revolution. Premier Energies'
-                            integrated water-pump solar panel systems can be
-                            installed at both small-scale and larger
-                            agricultural fields.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div
-                          className="infraslider"
-                          data-aos="fade-up"
-                          data-aos-offset="100"
-                          data-aos-easing="ease-in-sine"
-                          data-aos-once="true"
-                          data-aos-duration="500"
-                        >
-                          <img src={Service03} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div className="infrabox divertpro" id="diverse-projects">
               <div className="midcircleleft"></div>
               <div className="smallcirclerightdarkleft"></div>
@@ -388,21 +224,6 @@ export const Service = () => {
                                   </p>
                                 </div>
                               </AccordionItem>
-                              {/* <AccordionItem title="Asbestos Shed">
- <div className='nricont'>
- <p>Installing solar panels on the asbestos rooftops adds to the strength and structure of the roof and provides an eco-friendly and cost-effective way of producing energy.</p>
- </div>
- </AccordionItem>
- <AccordionItem title="Parking Structures">
- <div className='nricont'>
- <p>Providing the dual benefit of generating green power and protecting vehicles from the sun’s heat, our solar canopies take advantage of parking structures without the need for additional space. Parking structure solar canopy installations are ideal for malls, airports, hospitals and allied facilities with large parking areas. </p>
- </div>
- </AccordionItem>
- <AccordionItem title="Tracker Systems">
- <div className='nricont'>
- <p>Our solar tracker technology works in tandem with our ground mounted and rooftop mounted solar systems to maximize energy generation and output. Connected to the racking of the solar panels, the solar tracking equipment constantly adjusts the positioning of the panels with the movement of the sun. </p>
- </div>
- </AccordionItem> */}
                             </Accordion>
                           </div>
                         </div>
@@ -419,22 +240,22 @@ export const Service = () => {
                           <Slider {...settings}>
                             <div>
                               <div className="homeslider">
-                                <img src={Diverse} />
+                                <img src={Diverse} alt="img" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Diverse1} />
+                                <img src={Diverse1} alt="img" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Diverse2} />
+                                <img src={Diverse2} alt="img" />
                               </div>
                             </div>
                             <div>
                               <div className="homeslider">
-                                <img src={Diverse3} />
+                                <img src={Diverse3} alt="img" />
                               </div>
                             </div>
                           </Slider>
@@ -493,13 +314,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project01} />
+                        <img src={Project01} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>15 MW</h4>
                             <p>DEHRADUN UTTARAKHAND</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -512,13 +333,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project02} />
+                        <img src={Project02} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>11.5 MW</h4>
                             <p>RAYACHOTI, KADAPA ANDHRA PRADESH</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -531,13 +352,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project03} />
+                        <img src={Project03} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>10 MW</h4>
                             <p>TALAMANDLA, MEDAK TELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -550,13 +371,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project04} />
+                        <img src={Project04} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>8 MW</h4>
                             <p>CHEGUNTA, MEDAK TELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -569,13 +390,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project05} />
+                        <img src={Project05} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>8 MW</h4>
                             <p>RAIKOD, ZAHEERABADTELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -588,13 +409,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project06} />
+                        <img src={Project06} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>8 MW</h4>
                             <p>DIGWAL, RANGA REDDY TELANGA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -607,13 +428,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project07} />
+                        <img src={Project07} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>1 MW</h4>
                             <p>DEHRADUN UTTARAKHAND</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -626,13 +447,13 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project08} />
+                        <img src={Project08} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>205 KW</h4>
                             <p>HYUNDAI SHOWROOM TALWAR, TELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -646,7 +467,7 @@ export const Service = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project09} />
+                        <img src={Project09} alt="img" />
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>70 kW AC</h4>
@@ -655,7 +476,7 @@ export const Service = () => {
                               PRADESH
                             </p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>

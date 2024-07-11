@@ -16,7 +16,6 @@ import Img15 from "./images/certificate15.png";
 import Img17 from "./images/certificate17.png";
 import Img18 from "./images/certificate18.png";
 import Img20 from "./images/certificate20.png";
-
 import cert3 from "./certifications/cTUVus.pdf";
 import cert4 from "./certifications/IEC61215_61730.pdf";
 import cert6 from "./certifications/IEC62716.pdf";
@@ -70,7 +69,7 @@ export const Certification = () => {
             height: auto;
             object-fit: cover;
             object-position: center top;
-            margin-top: 50px; /* Adjust this value as needed */
+            margin-top: 50px; 
           }
         `}</style>
       </Helmet>

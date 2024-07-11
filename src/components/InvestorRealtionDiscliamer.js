@@ -2,19 +2,14 @@ import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 const InvestorRealtionDiscliamer = ({ onConfirm }) => {
-  //   useEffect(() => {
-  //     if (shouldRenderLoader) {
-  //       Cookies.set("loaderHidden", true, { expires: 10 / (24 * 60) });
-  //     }
-  //   }, [shouldRenderLoader]);
   const handleConfirmClick = () => {
     Cookies.set("loaderHidden", true);
-    onConfirm(true); // Call the parent function to update state
+    onConfirm(true); 
   };
 
   const handleDoNotConfirmClick = () => {
     Cookies.set("loaderHidden", false);
-    onConfirm(false); // Call the parent function to update state
+    onConfirm(false); 
   };
   return (
     <div className="disclaimer-popup">

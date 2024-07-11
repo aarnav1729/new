@@ -4,7 +4,7 @@ const IdeaCards = ({ articles }) => {
   return (
     <div className="articles-container newroom mt-3">
       {articles.map((article, index) => (
-        <a rel="bookmark noopener" href={article.url} target="_blank" className="newsroom_link">
+        <a href={article.url} target="_blank" rel="bookmark noopener noreferrer" className="newsroom_link">
           <article key={index} className="article   justify-content-b d-flex ">
             <div aria-label={` (opens in a new tab)`} className="img_container">
               <img
@@ -32,8 +32,8 @@ const IdeaCards = ({ articles }) => {
 
               <a
                 href={article.url}
-                rel="noopener"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="READ MORE "
                 className="btn-4"
               >

@@ -15,7 +15,7 @@ export const Spinner = () => {
     <>
       {loading ? (
         <div className="loader-container">
-            <img src={Loaderimg} />
+            <img src={Loaderimg} alt='img'/>
         </div> 
       ) : (
         <Home />

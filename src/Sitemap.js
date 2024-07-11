@@ -41,38 +41,38 @@ export const Sitemap = () => {
                       <ul className="stxbdr">
                         <li className="stxmns">
                           <a href="https://premierenergies.com/about-premier-energies#overview">
-                            <img src={Arrow} />
+                            <img src={Arrow} alt="arrow"/>
                             Overview
                           </a>
                         </li>
                         <li className="stxmns">
                           <a href="https://premierenergies.com/about-premier-energies#infrastructure">
-                            <img src={Arrow} />
+                            <img src={Arrow} alt="arrow" />
                             Infrastructure
                           </a>
                         </li>
                         <li className="stxmns">
                           <a href="https://premierenergies.com/about-premier-energies#our-ethos">
-                            <img src={Arrow} />
+                            <img src={Arrow} alt="arrow"/>
                             Ethos
                           </a>
                         </li>
                         <li className="stxmns">
                           <a href="https://premierenergies.com/about-premier-energies#our-journey">
-                            <img src={Arrow} />
+                            <img src={Arrow} alt="arrow"/>
                             Journey
                           </a>
                         </li>
                         <li className="stxmns">
                           <a href="https://premierenergies.com/about-premier-energies#our-leadership">
-                            <img src={Arrow} />
+                            <img src={Arrow} alt="arrow"/>
                             Leadership
                           </a>
                         </li>
                         <li className="stxmns">
                           <li>
                             <a href="https://premierenergies.com/about-premier-energies#awards-recognitions">
-                              <img src={Arrow} />
+                              <img src={Arrow} alt="arrow"/>
                               Awards & Recognitions
                             </a>
                           </li>
@@ -93,20 +93,6 @@ export const Sitemap = () => {
                     </li>
                     <li className="stxmn">
                       <NavLink to="/our-services">EPC</NavLink>
-                      {/* <ul className="stxbdr">
-                        <li className="stxmns">
-                          <NavLink to="/our-services">
-                            <img src={Arrow} />
-                            Services
-                          </NavLink>
-                        </li>
-                        <li className="stxmns">
-                          <NavLink to="/our-projects">
-                            <img src={Arrow} />
-                            Projects
-                          </NavLink>
-                        </li>
-                      </ul> */}
                     </li>
                   </ul>
                 </div>

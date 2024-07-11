@@ -110,7 +110,6 @@ export const Career = () => {
                       {pagedata.careerjobs ? 
                         <div className='currentopening' data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-once='true' data-aos-duration="500">
                           <Accordion atomic={true}>
-                            {/* Loop Start */}
                             {pagedata.careerjobs.map(jobsData => (
                               <AccordionItem title={jobsData.role}>
                                 <div className='nricont'> 
@@ -122,7 +121,6 @@ export const Career = () => {
                                 </div>
                               </AccordionItem>
                             ))}
-                            {/* Loop End */}
                           </Accordion>
                         </div>
                       : null}

@@ -10,9 +10,9 @@ import { useNavigate } from "react-router-dom";
 const GravienceForm = () => {
   const currentDate = new Date();
   const minDate = new Date(currentDate);
-  minDate.setFullYear(minDate.getFullYear() - 150); // 100 years ago
+  minDate.setFullYear(minDate.getFullYear() - 150);
   const maxDate = new Date(currentDate);
-  maxDate.setFullYear(maxDate.getFullYear() - 10); // 18 years ago
+  maxDate.setFullYear(maxDate.getFullYear() - 10);
 
   const phoneRegExp = /^[0-9]+$/;
   const validationSchema = Yup.object().shape({
@@ -28,12 +28,10 @@ const GravienceForm = () => {
       .min(3, "Grievant Name must be at least 3 characters")
       .max(20, "Grievant Name must not exceed 20 characters")
       .matches(/^[A-Z a-z]+$/, "Grievant Name must contain only alphabets"),
-    gender: Yup.string()
-      // .required("Gender is required")
-      .oneOf(
-        ["Male", "Female", "Rather Not Say", "NA", "Other"],
-        "Invalid Gender"
-      ),
+    gender: Yup.string().oneOf(
+      ["Male", "Female", "Rather Not Say", "NA", "Other"],
+      "Invalid Gender"
+    ),
     dateOfBirth: Yup.date()
       .min(minDate, "Date of Birth must be at most 150 years ago")
       .max(maxDate, "Date of Birth must be at least 10 years ago"),
@@ -86,10 +84,6 @@ const GravienceForm = () => {
         ],
         "Invalid relation with Premier Energies"
       ),
-
-    // contactDetailsAnonymous: Yup.string().when(
-
-    // relationWithPremierEnergies: Yup.string(),
     contactDetailsAnonymous: Yup.string().when("relationWithPremierEnergies", {
       is: (val) => ["Employee", "Contractual worker"].includes(val),
       then: (schema) =>
@@ -274,11 +268,9 @@ const GravienceForm = () => {
   const handleSubmit = async (values, { resetForm }) => {
     console.log("Submitting form...", values);
     try {
-      // Handle form submission
       const apiUrl =
         "https://www.premierenergies.com/api/insert_grievance_hook.php";
 
-      // Prepare data to send to the API
       const apiData = {
         accessAPI: "1",
         dateOfGrievance: values.dateOfGrievance,
@@ -629,7 +621,7 @@ const GravienceForm = () => {
                           />
                         </li>
                       )}
-                      {values.relationWithPremierEnergies == "Employee" && (
+                      {values.relationWithPremierEnergies === "Employee" && (
                         <li>
                           <span htmlFor="employerName">
                             Employer Name
@@ -652,8 +644,7 @@ const GravienceForm = () => {
                               Limited
                             </option>
                             <option
-                              value="PEIPL - Premier Energies
-International Private Limited"
+                              value="PEIPL - Premier Energies International Private Limited"
                             >
                               PEIPL - Premier Energies International Private
                               Limited
@@ -704,7 +695,7 @@ International Private Limited"
                           />
                         </li>
                       )}
-                      {values.relationWithPremierEnergies == "Employee" && (
+                      {values.relationWithPremierEnergies === "Employee" && (
                         <li>
                           <span htmlFor="department">
                             Department
@@ -726,7 +717,7 @@ International Private Limited"
                           />
                         </li>
                       )}
-                      {values.relationWithPremierEnergies == "Employee" && (
+                      {values.relationWithPremierEnergies === "Employee" && (
                         <li>
                           <span htmlFor="employeeID">
                             Employee ID
@@ -1052,7 +1043,6 @@ International Private Limited"
                             <p>Drop the files here</p>
                           ) : files.length > 0 ? (
                             <div>
-                              {/* {/ <p>Uploaded files:</p> <span className="required_asterisk">*</span>/} */}
                               {files.map((file, index) => (
                                 <div
                                   key={index}
@@ -1072,22 +1062,6 @@ International Private Limited"
                             </span>
                           )}
                         </div>
-                        {/* {isUploading && (
-                                <div className="progress_area">
-                                  <span>Uploading...</span>
-                                  <progress
-                                    value={uploadProgress}
-                                    max="100"
-                                    className="drag_area_progress_bar"
-                                  />
-                                  <button
-                                    className="drag_btn "
-                                    onClick={handleCancel}
-                                  >
-                                    Cancel
-                                  </button>
-                                </div>
-                              )} */}
                       </li>
                     </ul>
                     <div>
@@ -1127,8 +1101,6 @@ International Private Limited"
             )}
           </Formik>
         </div>
-        {/* </div>
-          </div> */}
       </div>
     </>
   );

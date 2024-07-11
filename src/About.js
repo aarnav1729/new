@@ -564,7 +564,6 @@ export const Home = () => {
 
                           <div className="App">
                             <div className="countnum">
-                              {/* {isVisible ? <CountUp start={(state.workforce===1) ? 1 : 1.4} end={1.4} duration={2} separator=" " decimals={1}  decimal="."  onEnd={()=> setState({ workforce:1.4 })} /> : <CountUp start={1} end={1.4} duration={0} />} GW                 */}
                               3.36 GW
                               <div className="labelcont">
                                 ANNUAL MANUFACTURING CAPACITY OF SOLAR MODULES
@@ -888,7 +887,6 @@ export const Home = () => {
                                 data-aos-once="true"
                                 data-aos-duration="500"
                               >
-                                {/* <strong>Best-in-Class MVRE Technology</strong> */}
                               </p>
                               <p
                                 data-aos="fade-up"
@@ -1402,4 +1400,5 @@ export const Home = () => {
     </>
   );
 };
+
 export default Home;

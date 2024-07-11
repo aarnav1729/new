@@ -91,10 +91,12 @@ const SolarCalculator = () => {
     }
 
     const stateFactor = state === "state1" ? 1.1 : state === "state2" ? 1.2 : 1;
-    const categoryFactor = category === "residential" ? 1.5 : category === "commercial" ? 1.3 : 1;
+    const categoryFactor =
+      category === "residential" ? 1.5 : category === "commercial" ? 1.3 : 1;
     const electricityCostFactor = electricityCost * 50;
 
-    const savings = baseSavings * stateFactor * categoryFactor + electricityCostFactor;
+    const savings =
+      baseSavings * stateFactor * categoryFactor + electricityCostFactor;
 
     return savings;
   };
@@ -110,7 +112,7 @@ const SolarCalculator = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={solcalImage} className="w-full object-cover h-96" />
+          <img src={solcalImage} className="w-full object-cover h-96" alt="img" />
         </div>
       </section>
       <div className="breadcrum pt-2">
@@ -150,11 +152,20 @@ const SolarCalculator = () => {
                     </div>
                   </div>
                 </div>
-                <div className="ir-container" data-aos="fade-up" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-once="true" data-aos-duration="500">
+                <div
+                  className="ir-container"
+                  data-aos="fade-up"
+                  data-aos-offset="100"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-once="true"
+                  data-aos-duration="500"
+                >
                   <div className="max-w-lg mx-auto bg-white text-black shadow-md rounded p-6">
                     <form onSubmit={handleSubmit}>
                       <div className="mb-4">
-                        <h3 className="font-semibold mb-2">1. Choose any one of the following</h3>
+                        <h3 className="font-semibold mb-2">
+                          1. Choose any one of the following
+                        </h3>
                         <div className="mb-2">
                           <input
                             type="checkbox"
@@ -234,7 +245,9 @@ const SolarCalculator = () => {
                         </div>
                       </div>
                       <div className="mb-4">
-                        <h3 className="font-semibold mb-2">2. Select State and Customer Category</h3>
+                        <h3 className="font-semibold mb-2">
+                          2. Select State and Customer Category
+                        </h3>
                         <select
                           name="state"
                           value={formData.state}
@@ -264,7 +277,9 @@ const SolarCalculator = () => {
                         </select>
                       </div>
                       <div className="mb-4">
-                        <h3 className="font-semibold mb-2">3. What is your average Electricity Cost?</h3>
+                        <h3 className="font-semibold mb-2">
+                          3. What is your average Electricity Cost?
+                        </h3>
                         <div className="flex items-center mb-2">
                           <input
                             type="number"
@@ -296,7 +311,9 @@ const SolarCalculator = () => {
                     </form>
                     {estimatedSavings !== null && (
                       <div className="mt-6 text-center">
-                        <h3 className="text-xl font-bold text-green-600">Estimated Savings: Rs. {estimatedSavings.toFixed(2)}</h3>
+                        <h3 className="text-xl font-bold text-green-600">
+                          Estimated Savings: Rs. {estimatedSavings.toFixed(2)}
+                        </h3>
                       </div>
                     )}
                   </div>

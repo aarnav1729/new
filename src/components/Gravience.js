@@ -3,11 +3,11 @@ import VerticalTimeline from "./VerticalTimeLine";
 import GravienceForm from "./GravienceForm";
 
 const Gravience = () => {
-  const [selectedTab, setSelectedTab] = useState(0); // Third tab selected by default (index starts from 0)
-  const [activeTab, setActiveTab] = useState(null); // Changed state name to activeTab and setActiveTab
+  const [selectedTab, setSelectedTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(null);
 
   const handleAccClick = (tabId) => {
-    setActiveTab(tabId === activeTab ? null : tabId); // Updated reference to activeTab
+    setActiveTab(tabId === activeTab ? null : tabId);
   };
 
   const tabData = [

@@ -40,7 +40,7 @@ export const Projects = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} />
+          <img src={Banner} alt="img"/>
           <div className="container">
             <div className="homcolft position-absolute position-right left">
               <span className="colorborder">
@@ -104,13 +104,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project01} />
+                        <img src={Project01} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>15 MW</h4>
                             <p>DEHRADUN UTTARAKHAND</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -123,13 +123,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project02} />
+                        <img src={Project02} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>11.5 MW</h4>
                             <p>RAYACHOTI, KADAPA ANDHRA PRADESH</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -142,13 +142,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project03} />
+                        <img src={Project03} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>10 MW</h4>
                             <p>TALAMANDLA, MEDAK TELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -161,13 +161,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project04} />
+                        <img src={Project04} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>8 MW</h4>
                             <p>CHEGUNTA, MEDAK TELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -180,13 +180,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project05} />
+                        <img src={Project05} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>8 MW</h4>
                             <p>RAIKOD, ZAHEERABADTELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -199,13 +199,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project06} />
+                        <img src={Project06} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>8 MW</h4>
                             <p>DIGWAL, RANGA REDDY TELANGA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -218,13 +218,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project07} />
+                        <img src={Project07} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>1 MW</h4>
                             <p>DEHRADUN UTTARAKHAND</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -237,13 +237,13 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project08} />
+                        <img src={Project08} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>205 KW</h4>
                             <p>HYUNDAI SHOWROOM TALWAR, TELANGANA</p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>
@@ -257,7 +257,7 @@ export const Projects = () => {
                       data-aos-duration="500"
                     >
                       <div className="projectbox">
-                        <img src={Project09} />
+                        <img src={Project09} alt="img"/>
                         <div className="projecttitle">
                           <div className="projleft">
                             <h4>70 kW AC</h4>
@@ -266,7 +266,7 @@ export const Projects = () => {
                               PRADESH
                             </p>
                           </div>
-                          <div className="projright">{/* <h4>2016</h4> */}</div>
+                          <div className="projright"></div>
                         </div>
                       </div>
                     </div>

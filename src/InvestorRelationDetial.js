@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
-import { Accordion, AccordionItem } from "react-light-accordion";
 import { Helmet } from "react-helmet";
 import CustomAcc from "./CustomAcc";
 import { Link, useParams } from "react-router-dom";
@@ -9,18 +8,15 @@ import InvestorRealtionDiscliamer from "./components/InvestorRealtionDiscliamer"
 import Cookies from "js-cookie";
 
 export const InvestorRelationDetial = () => {
-  const { slug } = useParams(); // Fetch the slug from the URL
+  const { slug } = useParams();
   const slugToText = (slug) => {
-    // Replace hyphens with spaces
     let text = slug.replace(/-/g, " ");
-
-    // Capitalize the first letter of each word
     text = text.replace(/\b\w/g, (char) => char.toUpperCase());
 
     return text;
   };
   const [shouldDisclamierd, setShouldDisclamierd] = useState(false);
-  const [showComponentB, setShowComponentB] = useState(false); // Define showComponentB state
+  const [showComponentB, setShowComponentB] = useState(false);
 
   useEffect(() => {
     const loaderHidden = Cookies.get("loaderHidden");
@@ -31,16 +27,13 @@ export const InvestorRelationDetial = () => {
     }
   }, []);
 
-  // Define a function to update showComponentB state
   const handleDisclamierdChange = (value) => {
     if (value === false) {
-      // User selected "I do not confirm"
-      setShowComponentB(true); // Show the CustomAcc component
-      setShouldDisclamierd(false); // Set shouldDisclamierd to false
+      setShowComponentB(true);
+      setShouldDisclamierd(false);
     } else {
-      // User selected "I confirm"
-      setShowComponentB(false); // Hide the CustomAcc component
-      setShouldDisclamierd(false); // Set shouldDisclamierd to true
+      setShowComponentB(false);
+      setShouldDisclamierd(false);
     }
   };
 
@@ -73,12 +66,6 @@ export const InvestorRelationDetial = () => {
       <div className="whitebg">
         <Header />
       </div>
-      {/* <section id="banner" className="p-0">
-        <div className="banner">
-          <img src={Banner} className="desktop-show" />
-          <img src={Mbanner} className="mobile-show mobilebanner" />
-        </div>
-      </section> */}
       <div class="breadcrum pt-2">
         <div class="container">
           <div class="row">
@@ -136,14 +123,7 @@ export const InvestorRelationDetial = () => {
                       </div>
                     </div>
                     <CustomAcc />
-                    {/* <div className=" desktop-investor">
-                    </div>
-                    <div className="mobile-investor">
-                      <InvestorRelationMobile />
-                    </div> */}
                   </>
-                  // <InvestorRelationMobile />
-                  // Render other components
                 )}
               </div>
             </div>

@@ -85,7 +85,7 @@ export const Module = ({ match }) => {
   };
 
   console.log(pagedata);
-  if (pagedata.length == 0) {
+  if (pagedata.length === 0) {
     console.log("no data");
     return null;
   }

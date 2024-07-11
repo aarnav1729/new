@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const InvestorRelationMobile = () => {
   const [pagedata, setPagedata] = useState([]);
-  const { slug } = useParams(); // Fetch the slug from the URL
+  const { slug } = useParams(); 
   const navigateto = useNavigate();
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const InvestorRelationMobile = () => {
     if (subcategory) {
       console.log("subcategory:", subcategory);
       setSelectedYear(Object.keys(subcategory.fy)[0]);
-      setSelectedCategory(subcategory.category_id); // add this line to update the selected category
+      setSelectedCategory(subcategory.category_id);
     }
   };
 
@@ -89,7 +89,6 @@ const InvestorRelationMobile = () => {
       } else if (typeof selectedCategory === "number") {
         currentCategory = pagedata.find((item) => item.id === selectedCategory);
       }
-      // Now you can use the currentCategory object as needed
 
       console.log("currentCategory:", currentCategory);
       if (currentCategory && currentCategory.subheadings) {
@@ -129,7 +128,6 @@ const InvestorRelationMobile = () => {
           <div className="media-navigation-wrapper">
             <div className="media-navigation-content">
               <div className="mobile-fields">
-                {/* Form for mobile */}
                 <div className="form-control">
                   <select
                     value={selectedCategory}
@@ -142,7 +140,6 @@ const InvestorRelationMobile = () => {
                       </option>
                     ))}
                   </select>
-                  {/* Render select options for subcategories */}
                   <select
                     value={selectedSubcategory}
                     onChange={(e) => handleSubcategoryClick(e.target.value)}
@@ -157,13 +154,11 @@ const InvestorRelationMobile = () => {
                           </option>
                         ))}
                   </select>
-                  {/* Render select options for years */}
                   <select
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
                   >
                     <option value="">Select Year</option>
-                    {/* Use selectedSubcategory to fetch year options */}
                     {selectedSubcategory &&
                       pagedata
                         .find((category) => category.slug === selectedCategory)

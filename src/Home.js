@@ -2,33 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import Slider from "react-slick";
-import Banner01 from "./images/banner01.jpg";
-import Banner01_new from "./images/banner_new.webp";
-import Mbanner01_new from "./images/mbanner_new.webp";
-import Banner02 from "./images/banner02.jpg";
-import Banner03 from "./images/banner03.jpg";
-import Mbanner01 from "./images/mbanner01.jpg";
-import Mbanner02 from "./images/mbanner02.jpg";
-import Mbanner03 from "./images/mbanner03.jpg";
 import aboutbanner01 from "./images/aboutbanner01.jpg";
 import aboutbanner02 from "./images/aboutbanner02.jpg";
 import aboutbanner03 from "./images/aboutbanner03.jpg";
 import { Numbers } from "./Number";
 import Solarcell from "./images/solar-cell.jpg";
 import Solarmodule from "./images/solar-module.jpg";
-import Epcimg from "./images/epc-solution.jpg";
-import Diverse from "./images/diverse-project.jpg";
-import Rooftop from "./images/roof-top.jpg";
-import Ground from "./images/ground-mounted.jpg";
-import Water from "./images/water-pump.jpg";
 import Nature from "./images/solar-video.gif";
 import Premiervideo from "./images/premier-video.mp4";
 import Mpremiervideo from "./images/mpremier-video.mp4";
-import Leed from "./images/Leed-certificate.jpg";
-import Mleed from "./images/mLeed-certificate.jpg";
 import { NavLink, useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import Popupimg from "./images/pop-up-new.jpg";
 import axios from "axios";
 
 var decodeHTML = function (html) {
@@ -48,7 +32,6 @@ export const Home = () => {
     setActive(!popup);
   };
 
-  // API Code Start
   const [pagedata, setPagedata] = useState([]);
 
   const [enquirefrm, setActive1] = useState("false");
@@ -72,11 +55,9 @@ export const Home = () => {
   }, []);
 
   console.log(pagedata);
-  if (pagedata.length == 0) {
+  if (pagedata.length === 0) {
     console.log("no news data");
-    // return null;
   }
-  // API Code End
 
   var settings = {
     dots: true,
@@ -211,14 +192,6 @@ export const Home = () => {
         ></meta>
       </Helmet>
       <Header />
-      {/* Popup Start*/}
-      {/* <div className={popup ? 'popup' : 'popup active'}>
-      <div className='popimg'>
-      <button onClick={handleToggle} className='popdesign'>X</button>
-      <img src={Popupimg}  alt=""/>
-      </div>
-      </div> */}
-      {/* Popup End */}
       <div className="jslider">
         <div className="row">
           <div className="_home_slider">
@@ -231,10 +204,12 @@ export const Home = () => {
                         <img
                           src={bannerData.bannerpic}
                           className="desktop-show"
+                          alt="img"
                         />
                         <img
                           src={bannerData.mbannerpic}
                           className="mobile-show"
+                          alt="img"
                         />
                       </div>
                       {bannerData.title ? (
@@ -312,17 +287,17 @@ export const Home = () => {
                     <Slider {...settings2}>
                       <div>
                         <div className="homeslider slide01">
-                          <img src={aboutbanner01} />
+                          <img src={aboutbanner01} alt="img" />
                         </div>
                       </div>
                       <div>
                         <div className="homeslider slide02">
-                          <img src={aboutbanner02} />
+                          <img src={aboutbanner02} alt="img" />
                         </div>
                       </div>
                       <div>
                         <div className="homeslider slide03">
-                          <img src={aboutbanner03} />
+                          <img src={aboutbanner03} alt="img" />
                         </div>
                       </div>
                     </Slider>
@@ -455,7 +430,7 @@ export const Home = () => {
                     data-aos-duration="500"
                   >
                     <div className="producthimg">
-                      <img src={Solarcell} />
+                      <img src={Solarcell} alt="img" />
                     </div>
                     <h4>SOLAR CELL</h4>
                     <p>
@@ -485,7 +460,7 @@ export const Home = () => {
                     data-aos-duration="500"
                   >
                     <div className="producthimg">
-                      <img src={Solarmodule} />
+                      <img src={Solarmodule} alt="img" />
                     </div>
                     <h4>SOLAR MODULE</h4>
                     <p>
@@ -512,117 +487,6 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section id="epc-solution">
-        <div className="epc-solution">
-          <div className="smallcirclerightdarkleft"></div>
-          <div className="midcircleleft"></div>
-          <div className="midcircleright"></div>
-          <div className="largecircleleft"></div>
-          <div className="container">
-            <div className="row">
-              <div className="web-container">
-                <div className="epcrow">
-                  <div
-                    className="epc-img"
-                    data-aos="fade-in"
-                    data-aos-offset="500"
-                    data-aos-easing="ease-in-sine"
-                    data-aos-once="true"
-                  >
-                    <img src={Epcimg} />
-                  </div>
-                  <div className="epc-cont">
-                    <div className="title">
-                      <span className="colorborder">
-                        <em></em>
-                      </span>
-                      <h2
-                        data-aos="fade-down"
-                        data-aos-offset="500"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-once="true"
-                        data-aos-duration="500"
-                      >
-                        EPC Solution
-                      </h2>
-                    </div>
-                    <h3
-                      data-aos="fade-up"
-                      data-aos-offset="500"
-                      data-aos-easing="ease-in-sine"
-                      data-aos-once="true"
-                      data-aos-duration="500"
-                    >
-                      FROM CONCEPTION TO EXECUTION
-                    </h3>
-                    <p
-                      data-aos="fade-in"
-                      data-aos-offset="500"
-                      data-aos-easing="ease-in-sine"
-                      data-aos-once="true"
-                    >
-                      Premier Energies has commissioned several solar power
-                      plants. As a part of the EPC division, Premier Energies
-                      has also commissioned ground-mounted, rooftop, floating,
-                      canal bank, canal top and hybrid power generation systems.
-                    </p>
-                    <div className="productstn">
-                      <div
-                        className="proimg"
-                        data-aos="fade-left"
-                        data-aos-offset="500"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-once="true"
-                      >
-                        <a>
-                          <img src={Rooftop} />
-                          <h4>Rooftop</h4>
-                        </a>
-                      </div>
-                      <div
-                        className="proimg"
-                        data-aos="fade-right"
-                        data-aos-offset="500"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-once="true"
-                      >
-                        <a>
-                          <img src={Ground} />
-                          <h4>Ground Mounted</h4>
-                        </a>
-                      </div>
-                      <div
-                        className="proimg"
-                        data-aos="fade-left"
-                        data-aos-offset="500"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-once="true"
-                      >
-                        <a>
-                          <img src={Water} />
-                          <h4>Water Pumps</h4>
-                        </a>
-                      </div>
-                      <div
-                        className="proimg"
-                        data-aos="fade-right"
-                        data-aos-offset="500"
-                        data-aos-easing="ease-in-sine"
-                        data-aos-once="true"
-                      >
-                        <a>
-                          <img src={Diverse} />
-                          <h4>Diverse Projects</h4>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section id="ownpower">
         <div className="ownpower">
           <div className="container">
@@ -799,7 +663,7 @@ export const Home = () => {
                     data-aos-once="true"
                     data-aos-duration="500"
                   >
-                    <img src={Nature} />
+                    <img src={Nature} alt="img"/>
                   </div>
                 </div>
               </div>

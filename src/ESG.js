@@ -83,7 +83,7 @@ export const ESG = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} />
+          <img src={Banner} alt="img"/>
           <div className="container">
             <div className="homcolft position-absolute position-right left">
               <span className="colorborder">
@@ -226,7 +226,7 @@ export const ESG = () => {
                           data-aos-once="true"
                           data-aos-duration="500"
                         >
-                          <img src={Service01} />
+                          <img src={Service01} alt="img"/>
                         </div>
                       </div>
                     </div>
@@ -287,7 +287,7 @@ export const ESG = () => {
                           data-aos-once="true"
                           data-aos-duration="500"
                         >
-                          <img src={Service02} />
+                          <img src={Service02} alt="img"/>
                         </div>
                       </div>
                     </div>
@@ -351,7 +351,7 @@ export const ESG = () => {
                           data-aos-once="true"
                           data-aos-duration="500"
                         >
-                          <img src={Service03} />
+                          <img src={Service03} alt="img"/>
                         </div>
                       </div>
                     </div>
@@ -392,52 +392,52 @@ export const ESG = () => {
                   <Slider {...settings2}>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES07} />
+                        <img src={INITIATIVES07} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES08} />
+                        <img src={INITIATIVES08} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES09} />
+                        <img src={INITIATIVES09} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES10} />
+                        <img src={INITIATIVES10} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES01} />
+                        <img src={INITIATIVES01} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES02} />
+                        <img src={INITIATIVES02} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES03} />
+                        <img src={INITIATIVES03} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES04} />
+                        <img src={INITIATIVES04} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES05} />
+                        <img src={INITIATIVES05} alt="img"/>
                       </div>
                     </div>
                     <div>
                       <div className="homeslider">
-                        <img src={INITIATIVES06} />
+                        <img src={INITIATIVES06} alt="img"/>
                       </div>
                     </div>
                   </Slider>

@@ -16,7 +16,6 @@ export const InvestorRealation = () => {
   const toggleAccordion = (index) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-  // API Start
   const [pagedata, setPagedata] = useState([]);
   useEffect(() => {
     let mounted = true;
@@ -36,7 +35,7 @@ export const InvestorRealation = () => {
     };
   }, []);
   const [shouldDisclamierd, setShouldDisclamierd] = useState(false);
-  const [showComponentB, setShowComponentB] = useState(false); // Define showComponentB state
+  const [showComponentB, setShowComponentB] = useState(false);
 
   useEffect(() => {
     const loaderHidden = Cookies.get("loaderHidden");
@@ -47,20 +46,16 @@ export const InvestorRealation = () => {
     }
   }, []);
 
-  // Define a function to update showComponentB state
   const handleDisclamierdChange = (value) => {
     if (value === false) {
-      // User selected "I do not confirm"
-      setShowComponentB(true); // Show the CustomAcc component
-      setShouldDisclamierd(false); // Set shouldDisclamierd to false
+      setShowComponentB(true); 
+      setShouldDisclamierd(false); 
     } else {
-      // User selected "I confirm"
-      setShowComponentB(false); // Hide the CustomAcc component
-      setShouldDisclamierd(false); // Set shouldDisclamierd to true
+      setShowComponentB(false); 
+      setShouldDisclamierd(false); 
     }
   };
 
-  // API End
   return (
     <>
       <Helmet>
@@ -90,8 +85,12 @@ export const InvestorRealation = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={Banner} className="desktop-show" alt="banner"/>
-          <img src={Mbanner} className="mobile-show mobilebanner" alt="banner" />
+          <img src={Banner} className="desktop-show" alt="banner" />
+          <img
+            src={Mbanner}
+            className="mobile-show mobilebanner"
+            alt="banner"
+          />
         </div>
       </section>
       <div class="breadcrum pt-2">
@@ -155,9 +154,8 @@ export const InvestorRealation = () => {
                       data-aos-duration="500"
                     >
                       {pagedata.map((item) => {
-                        // Add a conditional check to ensure item.icon is not null or undefined
                         if (item.icon) {
-                          console.log(item.icon); // Add this line to see the image URLs
+                          console.log(item.icon);
                           return (
                             <div key={item.id} className="ir-item">
                               <Link
@@ -172,7 +170,6 @@ export const InvestorRealation = () => {
                             </div>
                           );
                         } else {
-                          
                           return null;
                         }
                       })}

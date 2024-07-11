@@ -2,12 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
-import { Leaderbtn } from "./Leaderbtn";
 import { Link, useParams } from "react-router-dom";
 import axios, { Axios } from "axios";
-
-// Import the JSON data
-// import leadershipData from "./json/Leadership.json";
 
 export const Leadership = () => {
   const { slug } = useParams();
@@ -23,9 +19,7 @@ export const Leadership = () => {
           response
         );
 
-        // Check if the response is successful
         if (response.status === 200) {
-          // Filter the leadershipData and set the leader state
           const filteredLeader = response.data.find(
             (leader) => leader.slug.toLowerCase() === slug.toLowerCase()
           );

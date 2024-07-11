@@ -14,7 +14,7 @@ const NewsroomNew = () => {
       </div>
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={banner} />
+          <img src={banner} alt="img"/>
           <div className="container">
             <div className="homcolft position-absolute position-right left">
               <span className="colorborder">
