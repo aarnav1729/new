@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import solcalImage from "./images/solcal.jpg";
-import { Bar } from "react-chartjs-2";
-import Chart from "chart.js/auto";
+import Chart from "chart.js";
 
 const statesInIndia = [
   "Andhra Pradesh",
@@ -56,6 +55,17 @@ const SolarCalculator = () => {
     budget: "",
   });
   const [estimatedSavings, setEstimatedSavings] = useState(null);
+  const [annualProduction, setAnnualProduction] = useState(null);
+  const [paybackPeriod, setPaybackPeriod] = useState(null);
+  const savingsChartRef = useRef(null);
+  const costChartRef = useRef(null);
+  const productionChartRef = useRef(null);
+
+  useEffect(() => {
+    if (estimatedSavings !== null) {
+      renderCharts();
+    }
+  }, [estimatedSavings]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -81,12 +91,22 @@ const SolarCalculator = () => {
   };
 
   const calculateSavings = () => {
-    const { option, state, category, electricityCost, roofTopArea, shadowFreeArea, panelCapacity, budget } = formData;
+    const { option, electricityCost, panelCapacity } = formData;
 
-    // Add logic for calculations here based on the selected options
+    const systemSize =
+      option === "solarPanelCapacity" ? parseFloat(panelCapacity) : 10; // Default to 10KW if not specified
+    const dailyUnitsPerKW = 4; // Use 4 as an average value for simplicity
+    const dailyProduction = systemSize * dailyUnitsPerKW;
+    const annualProd = dailyProduction * 365;
+    const annualSavings = annualProd * electricityCost;
 
-    const savings = 0; // Replace with actual calculation
-    return savings;
+    // Assuming some values for payback period calculation
+    const initialCost = systemSize * 50000; // Assumed initial cost per KW
+    const payback = initialCost / annualSavings;
+
+    setAnnualProduction(annualProd);
+    setPaybackPeriod(payback);
+    return annualSavings;
   };
 
   const handleSubmit = (e) => {
@@ -95,27 +115,244 @@ const SolarCalculator = () => {
     setEstimatedSavings(savings);
   };
 
-  const data = {
-    labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-    datasets: [
-      {
-        label: "Net Annual Savings",
-        backgroundColor: "rgba(255,99,132,0.2)",
-        borderColor: "rgba(255,99,132,1)",
-        borderWidth: 1,
-        hoverBackgroundColor: "rgba(255,99,132,0.4)",
-        hoverBorderColor: "rgba(255,99,132,1)",
-        data: [65, 59, 80, 81, 56], // Replace with actual data
-      },
-    ],
-  };
+  const sizingChartRef = useRef(null);
+  const financingChartRef = useRef(null);
+  const capexDpaChartRef = useRef(null);
+  const energyForecastingChartRef = useRef(null);
 
-  const options = {
-    scales: {
-      y: {
-        beginAtZero: true,
+  const renderCharts = () => {
+    const systemSize = formData.panelCapacity
+      ? parseFloat(formData.panelCapacity)
+      : 10; // Define systemSize
+    const dailyUnitsPerKW = 4; // Average value for simplicity
+    const dailyProduction = systemSize * dailyUnitsPerKW;
+    const annualProd = dailyProduction * 365; // Define annualProd
+
+    const capexCost = 500000; // Example value, replace with actual calculation logic if needed
+    const dpaCost = 300000; // Example value, replace with actual calculation logic if needed
+    const ppaCost = 200000; // Example value, replace with actual calculation logic if needed
+
+    const capexSavings = estimatedSavings; // Adjust logic as needed
+    const dpaSavings = estimatedSavings * 0.9; // Adjust logic as needed
+
+    const savingsCtx = savingsChartRef.current.getContext("2d");
+    new Chart(savingsCtx, {
+      type: "bar",
+      data: {
+        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        datasets: [
+          {
+            label: "Net Annual Savings",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(75, 192, 192, 0.4)",
+            hoverBorderColor: "rgba(75, 192, 192, 1)",
+            data: [
+              estimatedSavings,
+              estimatedSavings * 1.1,
+              estimatedSavings * 1.2,
+              estimatedSavings * 1.3,
+              estimatedSavings * 1.4,
+            ],
+          },
+        ],
       },
-    },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    const costCtx = costChartRef.current.getContext("2d");
+    const initialCost = 500000; // Define initialCost variable
+    new Chart(costCtx, {
+      type: "line",
+      initialCost: initialCost, // Use the defined variable
+      data: {
+        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        datasets: [
+          {
+            label: "Cumulative Cost",
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(255, 99, 132, 0.4)",
+            hoverBorderColor: "rgba(255, 99, 132, 1)",
+            data: [
+              initialCost,
+              initialCost - estimatedSavings,
+              initialCost - estimatedSavings * 2,
+              initialCost - estimatedSavings * 3,
+              initialCost - estimatedSavings * 4,
+            ],
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    const productionCtx = productionChartRef.current.getContext("2d");
+    new Chart(productionCtx, {
+      type: "bar",
+      data: {
+        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        datasets: [
+          {
+            label: "Annual Production (kWh)",
+            backgroundColor: "rgba(153, 102, 255, 0.2)",
+            borderColor: "rgba(153, 102, 255, 1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(153, 102, 255, 0.4)",
+            hoverBorderColor: "rgba(153, 102, 255, 1)",
+            data: [
+              annualProduction,
+              annualProduction * 1.05,
+              annualProduction * 1.1,
+              annualProduction * 1.15,
+              annualProduction * 1.2,
+            ],
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+
+    const sizingCtx = sizingChartRef.current.getContext("2d");
+    new Chart(sizingCtx, {
+      type: "doughnut",
+      data: {
+        labels: ["System Size (kW)", "Annual Generation (kWh)"],
+        datasets: [
+          {
+            label: "System Sizing",
+            backgroundColor: ["#FF6384", "#36A2EB"],
+            hoverBackgroundColor: ["#FF6384", "#36A2EB"],
+            data: [systemSize, annualProd],
+          },
+        ],
+      },
+    });
+
+    const financingCtx = financingChartRef.current.getContext("2d");
+    new Chart(financingCtx, {
+      type: "bar",
+      data: {
+        labels: ["CAPEX", "DPA", "PPA"],
+        datasets: [
+          {
+            label: "Financing Options",
+            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+            hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+            data: [capexCost, dpaCost, ppaCost],
+          },
+        ],
+      },
+    });
+
+    const capexDpaCtx = capexDpaChartRef.current.getContext("2d");
+    new Chart(capexDpaCtx, {
+      type: "line",
+      data: {
+        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        datasets: [
+          {
+            label: "CAPEX",
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(255, 99, 132, 0.4)",
+            hoverBorderColor: "rgba(255, 99, 132, 1)",
+            data: [
+              capexSavings,
+              capexSavings * 1.1,
+              capexSavings * 1.2,
+              capexSavings * 1.3,
+              capexSavings * 1.4,
+            ],
+          },
+          {
+            label: "DPA",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(75, 192, 192, 0.4)",
+            hoverBorderColor: "rgba(75, 192, 192, 1)",
+            data: [
+              dpaSavings,
+              dpaSavings * 1.1,
+              dpaSavings * 1.2,
+              dpaSavings * 1.3,
+              dpaSavings * 1.4,
+            ],
+          },
+        ],
+      },
+    });
+
+    const energyForecastingCtx =
+      energyForecastingChartRef.current.getContext("2d");
+    new Chart(energyForecastingCtx, {
+      type: "bar",
+      data: {
+        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+        datasets: [
+          {
+            label: "Energy Forecasting",
+            backgroundColor: "rgba(153, 102, 255, 0.2)",
+            borderColor: "rgba(153, 102, 255, 1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(153, 102, 255, 0.4)",
+            hoverBorderColor: "rgba(153, 102, 255, 1)",
+            data: [
+              annualProduction,
+              annualProduction * 1.05,
+              annualProduction * 1.1,
+              annualProduction * 1.15,
+              annualProduction * 1.2,
+            ],
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
   };
 
   return (
@@ -123,7 +360,11 @@ const SolarCalculator = () => {
       <Header />
       <section id="banner" className="p-0">
         <div className="banner">
-          <img src={solcalImage} className="w-full object-cover h-96" alt="img" />
+          <img
+            src={solcalImage}
+            className="w-full object-cover h-96"
+            alt="img"
+          />
         </div>
       </section>
       <div className="breadcrum pt-2">
@@ -315,7 +556,7 @@ const SolarCalculator = () => {
                       </div>
                       <button
                         type="submit"
-                        className="block w-full bg-blue-500 text-white p-2 rounded mt-4 hover:bg-blue-600"
+                        className="block w-full bg-blue-600 text-white p-2 rounded mt-4 hover:bg-blue-700"
                       >
                         Calculate
                       </button>
@@ -325,15 +566,69 @@ const SolarCalculator = () => {
                         <h3 className="text-xl font-bold text-green-600">
                           Estimated Savings: Rs. {estimatedSavings.toFixed(2)}
                         </h3>
+                        <h3 className="text-xl font-bold text-green-600">
+                          Annual Production: {annualProduction.toFixed(2)} kWh
+                        </h3>
+                        <h3 className="text-xl font-bold text-green-600">
+                          Payback Period: {paybackPeriod.toFixed(2)} years
+                        </h3>
                       </div>
                     )}
                   </div>
                 </div>
-                {/* Insert Charts and Graphs here */}
-                <div className="charts-container">
-                  <h3 className="text-center font-bold text-lg mb-4">Financial Analysis</h3>
+                <div className="charts-container mt-8">
+                  <h3 className="text-center font-bold text-lg mb-4">
+                    Financial Analysis
+                  </h3>
                   <div className="chart mb-8">
-                    <Bar data={data} options={options} />
+                    <canvas id="savingsChart" ref={savingsChartRef}></canvas>
+                  </div>
+                  <div className="chart mb-8">
+                    <canvas id="costChart" ref={costChartRef}></canvas>
+                  </div>
+                  <div className="chart mb-8">
+                    <canvas
+                      id="productionChart"
+                      ref={productionChartRef}
+                    ></canvas>
+                  </div>
+                </div>
+                <div className="charts-container mt-8">
+                  <h3 className="text-center font-bold text-lg mb-4">
+                    System Sizing
+                  </h3>
+                  <div className="chart mb-8">
+                    <canvas id="sizingChart" ref={sizingChartRef}></canvas>
+                  </div>
+                </div>
+                <div className="charts-container mt-8">
+                  <h3 className="text-center font-bold text-lg mb-4">
+                    Financing Options
+                  </h3>
+                  <div className="chart mb-8">
+                    <canvas
+                      id="financingChart"
+                      ref={financingChartRef}
+                    ></canvas>
+                  </div>
+                </div>
+                <div className="charts-container mt-8">
+                  <h3 className="text-center font-bold text-lg mb-4">
+                    CAPEX vs DPA
+                  </h3>
+                  <div className="chart mb-8">
+                    <canvas id="capexDpaChart" ref={capexDpaChartRef}></canvas>
+                  </div>
+                </div>
+                <div className="charts-container mt-8">
+                  <h3 className="text-center font-bold text-lg mb-4">
+                    Energy Forecasting
+                  </h3>
+                  <div className="chart mb-8">
+                    <canvas
+                      id="energyForecastingChart"
+                      ref={energyForecastingChartRef}
+                    ></canvas>
                   </div>
                 </div>
               </div>
