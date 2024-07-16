@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import solcalImage from "./images/solcal.jpg";
+import { Bar } from "react-chartjs-2";
+import Chart from "chart.js/auto";
 
 const statesInIndia = [
   "Andhra Pradesh",
@@ -79,25 +81,11 @@ const SolarCalculator = () => {
   };
 
   const calculateSavings = () => {
-    const { option, state, category, electricityCost } = formData;
+    const { option, state, category, electricityCost, roofTopArea, shadowFreeArea, panelCapacity, budget } = formData;
 
-    let baseSavings = 1000; // Base savings amount
-    if (option === "totalRoofTopArea") {
-      baseSavings += 500; // Add more savings if total roof top area is selected
-    } else if (option === "solarPanelCapacity") {
-      baseSavings += 700; // Add more savings if solar panel capacity is selected
-    } else if (option === "budget") {
-      baseSavings += 300; // Add more savings if budget is selected
-    }
+    // Add logic for calculations here based on the selected options
 
-    const stateFactor = state === "state1" ? 1.1 : state === "state2" ? 1.2 : 1;
-    const categoryFactor =
-      category === "residential" ? 1.5 : category === "commercial" ? 1.3 : 1;
-    const electricityCostFactor = electricityCost * 50;
-
-    const savings =
-      baseSavings * stateFactor * categoryFactor + electricityCostFactor;
-
+    const savings = 0; // Replace with actual calculation
     return savings;
   };
 
@@ -105,6 +93,29 @@ const SolarCalculator = () => {
     e.preventDefault();
     const savings = calculateSavings();
     setEstimatedSavings(savings);
+  };
+
+  const data = {
+    labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
+    datasets: [
+      {
+        label: "Net Annual Savings",
+        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: "rgba(255,99,132,1)",
+        borderWidth: 1,
+        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+        hoverBorderColor: "rgba(255,99,132,1)",
+        data: [65, 59, 80, 81, 56], // Replace with actual data
+      },
+    ],
+  };
+
+  const options = {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
   };
 
   return (
@@ -316,6 +327,13 @@ const SolarCalculator = () => {
                         </h3>
                       </div>
                     )}
+                  </div>
+                </div>
+                {/* Insert Charts and Graphs here */}
+                <div className="charts-container">
+                  <h3 className="text-center font-bold text-lg mb-4">Financial Analysis</h3>
+                  <div className="chart mb-8">
+                    <Bar data={data} options={options} />
                   </div>
                 </div>
               </div>
