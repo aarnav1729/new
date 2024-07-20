@@ -45,27 +45,19 @@ const statesInIndia = [
 
 const SolarCalculator = () => {
   const [formData, setFormData] = useState({
-    option: "",
-    state: "",
-    category: "",
-    electricityCost: 8,
-    roofTopArea: "",
-    shadowFreeArea: "",
-    panelCapacity: "",
-    budget: "",
+    sanctionedLoad: 9,
+    unitsConsumed: 1136,
+    highestTariff: 10.07,
+    solarNotInUse: 0,
+    daytimeConsumption: 20,
+    roofArea: 900,
+    shading: "No",
+    systemSize: 9,
   });
   const [estimatedSavings, setEstimatedSavings] = useState(null);
   const [annualProduction, setAnnualProduction] = useState(null);
   const [paybackPeriod, setPaybackPeriod] = useState(null);
-  const savingsChartRef = useRef(null);
-  const costChartRef = useRef(null);
-  const productionChartRef = useRef(null);
-
-  useEffect(() => {
-    if (estimatedSavings !== null) {
-      renderCharts();
-    }
-  }, [estimatedSavings]);
+  const sizingChartRef = useRef(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -75,30 +67,25 @@ const SolarCalculator = () => {
     }));
   };
 
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      option: checked ? value : "",
-    }));
-  };
-
-  const handleSliderChange = (e) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      electricityCost: e.target.value,
-    }));
+  const calculateAnnualGeneration = () => {
+    const { sanctionedLoad, daytimeConsumption, roofArea } = formData;
+    // Use the formulas from the Excel file here
+    const annualGeneration = sanctionedLoad * daytimeConsumption * roofArea; // Simplified example
+    return annualGeneration;
   };
 
   const calculateSavings = () => {
-    const { option, electricityCost, panelCapacity } = formData;
-
-    const systemSize =
-      option === "solarPanelCapacity" ? parseFloat(panelCapacity) : 10; // Default to 10KW if not specified
+    const {
+      sanctionedLoad,
+      highestTariff,
+      daytimeConsumption,
+      roofArea,
+      systemSize,
+    } = formData;
     const dailyUnitsPerKW = 4; // Use 4 as an average value for simplicity
     const dailyProduction = systemSize * dailyUnitsPerKW;
     const annualProd = dailyProduction * 365;
-    const annualSavings = annualProd * electricityCost;
+    const annualSavings = annualProd * highestTariff;
 
     // Assuming some values for payback period calculation
     const initialCost = systemSize * 50000; // Assumed initial cost per KW
@@ -115,245 +102,25 @@ const SolarCalculator = () => {
     setEstimatedSavings(savings);
   };
 
-  const sizingChartRef = useRef(null);
-  const financingChartRef = useRef(null);
-  const capexDpaChartRef = useRef(null);
-  const energyForecastingChartRef = useRef(null);
-
-  const renderCharts = () => {
-    const systemSize = formData.panelCapacity
-      ? parseFloat(formData.panelCapacity)
-      : 10; // Define systemSize
-    const dailyUnitsPerKW = 4; // Average value for simplicity
-    const dailyProduction = systemSize * dailyUnitsPerKW;
-    const annualProd = dailyProduction * 365; // Define annualProd
-
-    const capexCost = 500000; // Example value, replace with actual calculation logic if needed
-    const dpaCost = 300000; // Example value, replace with actual calculation logic if needed
-    const ppaCost = 200000; // Example value, replace with actual calculation logic if needed
-
-    const capexSavings = estimatedSavings; // Adjust logic as needed
-    const dpaSavings = estimatedSavings * 0.9; // Adjust logic as needed
-
-    const savingsCtx = savingsChartRef.current.getContext("2d");
-    new Chart(savingsCtx, {
-      type: "bar",
-      data: {
-        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-        datasets: [
-          {
-            label: "Net Annual Savings",
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(75, 192, 192, 0.4)",
-            hoverBorderColor: "rgba(75, 192, 192, 1)",
-            data: [
-              estimatedSavings,
-              estimatedSavings * 1.1,
-              estimatedSavings * 1.2,
-              estimatedSavings * 1.3,
-              estimatedSavings * 1.4,
-            ],
-          },
-        ],
-      },
-      options: {
-        scales: {
-          yAxes: [
+  useEffect(() => {
+    if (sizingChartRef.current) {
+      const sizingCtx = sizingChartRef.current.getContext("2d");
+      new Chart(sizingCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["System Size (kW)", "Annual Generation (kWh)"],
+          datasets: [
             {
-              ticks: {
-                beginAtZero: true,
-              },
+              label: "System Sizing",
+              backgroundColor: ["#FF6384", "#36A2EB"],
+              hoverBackgroundColor: ["#FF6384", "#36A2EB"],
+              data: [formData.systemSize, calculateAnnualGeneration()],
             },
           ],
         },
-      },
-    });
-
-    const costCtx = costChartRef.current.getContext("2d");
-    const initialCost = 500000; // Define initialCost variable
-    new Chart(costCtx, {
-      type: "line",
-      initialCost: initialCost, // Use the defined variable
-      data: {
-        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-        datasets: [
-          {
-            label: "Cumulative Cost",
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(255, 99, 132, 0.4)",
-            hoverBorderColor: "rgba(255, 99, 132, 1)",
-            data: [
-              initialCost,
-              initialCost - estimatedSavings,
-              initialCost - estimatedSavings * 2,
-              initialCost - estimatedSavings * 3,
-              initialCost - estimatedSavings * 4,
-            ],
-          },
-        ],
-      },
-      options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
-      },
-    });
-
-    const productionCtx = productionChartRef.current.getContext("2d");
-    new Chart(productionCtx, {
-      type: "bar",
-      data: {
-        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-        datasets: [
-          {
-            label: "Annual Production (kWh)",
-            backgroundColor: "rgba(153, 102, 255, 0.2)",
-            borderColor: "rgba(153, 102, 255, 1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(153, 102, 255, 0.4)",
-            hoverBorderColor: "rgba(153, 102, 255, 1)",
-            data: [
-              annualProduction,
-              annualProduction * 1.05,
-              annualProduction * 1.1,
-              annualProduction * 1.15,
-              annualProduction * 1.2,
-            ],
-          },
-        ],
-      },
-      options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
-      },
-    });
-
-    const sizingCtx = sizingChartRef.current.getContext("2d");
-    new Chart(sizingCtx, {
-      type: "doughnut",
-      data: {
-        labels: ["System Size (kW)", "Annual Generation (kWh)"],
-        datasets: [
-          {
-            label: "System Sizing",
-            backgroundColor: ["#FF6384", "#36A2EB"],
-            hoverBackgroundColor: ["#FF6384", "#36A2EB"],
-            data: [systemSize, annualProd],
-          },
-        ],
-      },
-    });
-
-    const financingCtx = financingChartRef.current.getContext("2d");
-    new Chart(financingCtx, {
-      type: "bar",
-      data: {
-        labels: ["CAPEX", "DPA", "PPA"],
-        datasets: [
-          {
-            label: "Financing Options",
-            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-            hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-            data: [capexCost, dpaCost, ppaCost],
-          },
-        ],
-      },
-    });
-
-    const capexDpaCtx = capexDpaChartRef.current.getContext("2d");
-    new Chart(capexDpaCtx, {
-      type: "line",
-      data: {
-        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-        datasets: [
-          {
-            label: "CAPEX",
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            borderColor: "rgba(255, 99, 132, 1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(255, 99, 132, 0.4)",
-            hoverBorderColor: "rgba(255, 99, 132, 1)",
-            data: [
-              capexSavings,
-              capexSavings * 1.1,
-              capexSavings * 1.2,
-              capexSavings * 1.3,
-              capexSavings * 1.4,
-            ],
-          },
-          {
-            label: "DPA",
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(75, 192, 192, 0.4)",
-            hoverBorderColor: "rgba(75, 192, 192, 1)",
-            data: [
-              dpaSavings,
-              dpaSavings * 1.1,
-              dpaSavings * 1.2,
-              dpaSavings * 1.3,
-              dpaSavings * 1.4,
-            ],
-          },
-        ],
-      },
-    });
-
-    const energyForecastingCtx =
-      energyForecastingChartRef.current.getContext("2d");
-    new Chart(energyForecastingCtx, {
-      type: "bar",
-      data: {
-        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-        datasets: [
-          {
-            label: "Energy Forecasting",
-            backgroundColor: "rgba(153, 102, 255, 0.2)",
-            borderColor: "rgba(153, 102, 255, 1)",
-            borderWidth: 1,
-            hoverBackgroundColor: "rgba(153, 102, 255, 0.4)",
-            hoverBorderColor: "rgba(153, 102, 255, 1)",
-            data: [
-              annualProduction,
-              annualProduction * 1.05,
-              annualProduction * 1.1,
-              annualProduction * 1.15,
-              annualProduction * 1.2,
-            ],
-          },
-        ],
-      },
-      options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-          ],
-        },
-      },
-    });
-  };
+      });
+    }
+  }, [formData]);
 
   return (
     <>
@@ -366,6 +133,7 @@ const SolarCalculator = () => {
             alt="img"
           />
         </div>
+        )
       </section>
       <div className="breadcrum pt-2">
         <div className="container">
@@ -378,6 +146,7 @@ const SolarCalculator = () => {
                 <li>Solar Calculator</li>
               </ul>
             </div>
+            )
           </div>
         </div>
       </div>
@@ -415,144 +184,89 @@ const SolarCalculator = () => {
                   <div className="max-w-lg mx-auto bg-white text-black shadow-md rounded p-6">
                     <form onSubmit={handleSubmit}>
                       <div className="mb-4">
-                        <h3 className="font-semibold mb-2">
-                          1. Choose any one of the following
-                        </h3>
+                        <h3 className="font-semibold mb-2">1. System Sizing</h3>
                         <div className="mb-2">
-                          <input
-                            type="checkbox"
-                            name="option"
-                            value="totalRoofTopArea"
-                            onChange={handleCheckboxChange}
-                            checked={formData.option === "totalRoofTopArea"}
-                            className="mr-2"
-                          />
-                          Total Area
-                          {formData.option === "totalRoofTopArea" && (
-                            <div className="mt-2">
-                              <input
-                                type="text"
-                                name="roofTopArea"
-                                value={formData.roofTopArea}
-                                onChange={handleInputChange}
-                                className="block w-full p-2 border rounded mb-2"
-                                placeholder="Enter roof top area"
-                              />
-                              <input
-                                type="text"
-                                name="shadowFreeArea"
-                                value={formData.shadowFreeArea}
-                                onChange={handleInputChange}
-                                className="block w-full p-2 border rounded mb-2"
-                                placeholder="% of Shadow Free Open Space Available"
-                              />
-                            </div>
-                          )}
-                        </div>
-                        <div className="mb-2">
-                          <input
-                            type="checkbox"
-                            name="option"
-                            value="solarPanelCapacity"
-                            onChange={handleCheckboxChange}
-                            checked={formData.option === "solarPanelCapacity"}
-                            className="mr-2"
-                          />
-                          Solar Panel Capacity you want to install
-                          {formData.option === "solarPanelCapacity" && (
-                            <div className="mt-2">
-                              <input
-                                type="text"
-                                name="panelCapacity"
-                                value={formData.panelCapacity}
-                                onChange={handleInputChange}
-                                className="block w-full p-2 border rounded mb-2"
-                                placeholder="Enter panel capacity in kW"
-                              />
-                            </div>
-                          )}
-                        </div>
-                        <div>
-                          <input
-                            type="checkbox"
-                            name="option"
-                            value="budget"
-                            onChange={handleCheckboxChange}
-                            checked={formData.option === "budget"}
-                            className="mr-2"
-                          />
-                          Your budget
-                          {formData.option === "budget" && (
-                            <div className="mt-2">
-                              <input
-                                type="text"
-                                name="budget"
-                                value={formData.budget}
-                                onChange={handleInputChange}
-                                className="block w-full p-2 border rounded mb-2"
-                                placeholder="Enter your budget in Rs."
-                              />
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                      <div className="mb-4">
-                        <h3 className="font-semibold mb-2">
-                          2. Select State and Customer Category
-                        </h3>
-                        <select
-                          name="state"
-                          value={formData.state}
-                          onChange={handleInputChange}
-                          className="block w-full p-2 border rounded mb-2"
-                        >
-                          <option value="">Select State</option>
-                          {statesInIndia.map((state, index) => (
-                            <option key={index} value={state}>
-                              {state}
-                            </option>
-                          ))}
-                        </select>
-                        <select
-                          name="category"
-                          value={formData.category}
-                          onChange={handleInputChange}
-                          className="block w-full p-2 border rounded"
-                        >
-                          <option value="">Select Category of Customer</option>
-                          <option value="residential">Residential</option>
-                          <option value="commercial">Commercial</option>
-                          <option value="industrial">Industrial</option>
-                          <option value="institutional">Institutional</option>
-                          <option value="government">Government</option>
-                          <option value="social">Social</option>
-                        </select>
-                      </div>
-                      <div className="mb-4">
-                        <h3 className="font-semibold mb-2">
-                          3. What is your average Electricity Cost?
-                        </h3>
-                        <div className="flex items-center mb-2">
+                          <label>Sanctioned Load (kW):</label>
                           <input
                             type="number"
-                            name="electricityCost"
-                            value={formData.electricityCost}
-                            onChange={handleSliderChange}
-                            min="4"
-                            max="20"
-                            className="w-20 p-2 border rounded mr-2"
+                            name="sanctionedLoad"
+                            value={formData.sanctionedLoad}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
                           />
-                          Rs. / kWh
                         </div>
-                        <input
-                          type="range"
-                          name="electricityCost"
-                          value={formData.electricityCost}
-                          onChange={handleSliderChange}
-                          min="4"
-                          max="20"
-                          className="w-full"
-                        />
+                        <div className="mb-2">
+                          <label>Units Consumed (kWh):</label>
+                          <input
+                            type="number"
+                            name="unitsConsumed"
+                            value={formData.unitsConsumed}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label>Highest Tariff (₹):</label>
+                          <input
+                            type="number"
+                            name="highestTariff"
+                            value={formData.highestTariff}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label>Days Solar Not In Use:</label>
+                          <input
+                            type="number"
+                            name="solarNotInUse"
+                            value={formData.solarNotInUse}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label>Daytime Consumption (%):</label>
+                          <input
+                            type="number"
+                            name="daytimeConsumption"
+                            value={formData.daytimeConsumption}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label>Roof Area (sqft):</label>
+                          <input
+                            type="number"
+                            name="roofArea"
+                            value={formData.roofArea}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          />
+                        </div>
+                        <div className="mb-2">
+                          <label>Shading:</label>
+                          <select
+                            name="shading"
+                            value={formData.shading}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          >
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+                        <div className="mb-2">
+                          <label>System Size (kW):</label>
+                          <input
+                            type="number"
+                            name="systemSize"
+                            value={formData.systemSize}
+                            onChange={handleInputChange}
+                            className="block w-full p-2 border rounded mb-2"
+                          />
+                        </div>
                       </div>
                       <button
                         type="submit"
@@ -564,71 +278,33 @@ const SolarCalculator = () => {
                     {estimatedSavings !== null && (
                       <div className="mt-6 text-center">
                         <h3 className="text-xl font-bold text-green-600">
-                          Estimated Savings: Rs. {estimatedSavings.toFixed(2)}
+                          Estimated Savings
                         </h3>
-                        <h3 className="text-xl font-bold text-green-600">
-                          Annual Production: {annualProduction.toFixed(2)} kWh
-                        </h3>
-                        <h3 className="text-xl font-bold text-green-600">
-                          Payback Period: {paybackPeriod.toFixed(2)} years
-                        </h3>
+                        {estimatedSavings !== null && (
+                          <div className="mt-6 text-center">
+                            <h3 className="text-xl font-bold text-green-600">
+                              Estimated Savings: Rs.{" "}
+                              {estimatedSavings.toFixed(2)}
+                            </h3>
+                            <h3 className="text-xl font-bold text-green-600">
+                              Annual Production: {annualProduction.toFixed(2)}{" "}
+                              kWh
+                            </h3>
+                            <h3 className="text-xl font-bold text-green-600">
+                              Payback Period: {paybackPeriod.toFixed(2)} years
+                            </h3>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
-                </div>
-                <div className="charts-container mt-8">
-                  <h3 className="text-center font-bold text-lg mb-4">
-                    Financial Analysis
-                  </h3>
-                  <div className="chart mb-8">
-                    <canvas id="savingsChart" ref={savingsChartRef}></canvas>
-                  </div>
-                  <div className="chart mb-8">
-                    <canvas id="costChart" ref={costChartRef}></canvas>
-                  </div>
-                  <div className="chart mb-8">
-                    <canvas
-                      id="productionChart"
-                      ref={productionChartRef}
-                    ></canvas>
-                  </div>
-                </div>
-                <div className="charts-container mt-8">
-                  <h3 className="text-center font-bold text-lg mb-4">
-                    System Sizing
-                  </h3>
-                  <div className="chart mb-8">
-                    <canvas id="sizingChart" ref={sizingChartRef}></canvas>
-                  </div>
-                </div>
-                <div className="charts-container mt-8">
-                  <h3 className="text-center font-bold text-lg mb-4">
-                    Financing Options
-                  </h3>
-                  <div className="chart mb-8">
-                    <canvas
-                      id="financingChart"
-                      ref={financingChartRef}
-                    ></canvas>
-                  </div>
-                </div>
-                <div className="charts-container mt-8">
-                  <h3 className="text-center font-bold text-lg mb-4">
-                    CAPEX vs DPA
-                  </h3>
-                  <div className="chart mb-8">
-                    <canvas id="capexDpaChart" ref={capexDpaChartRef}></canvas>
-                  </div>
-                </div>
-                <div className="charts-container mt-8">
-                  <h3 className="text-center font-bold text-lg mb-4">
-                    Energy Forecasting
-                  </h3>
-                  <div className="chart mb-8">
-                    <canvas
-                      id="energyForecastingChart"
-                      ref={energyForecastingChartRef}
-                    ></canvas>
+                  <div className="charts-container mt-8">
+                    <h3 className="text-center font-bold text-lg mb-4">
+                      System Sizing
+                    </h3>
+                    <div className="chart mb-8">
+                      <canvas id="sizingChart" ref={sizingChartRef}></canvas>
+                    </div>
                   </div>
                 </div>
               </div>
