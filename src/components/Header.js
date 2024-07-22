@@ -139,9 +139,13 @@ export const Header = () => {
                     <li className="desktop-show">
                       <NavLink to="/contact-us">Contact Us</NavLink>
                     </li>
+                    
+                    
+                    {/**
                     <li className="desktop-show">
                       <NavLink to="/solar-calculator">Solar Calculator</NavLink>
-                    </li>
+                    </li>*/}
+
                     <li>
                       <button
                         onClick={handleToggle}
