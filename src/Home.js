@@ -270,13 +270,11 @@ export const Home = () => {
                       </h1>
                       <p>
                         Offering sustainable energy solutions for over 29 years,
-                        Premier Energies is the India’s 2nd largest integrated
-                        solar cell and module manufacturer in India as of March
-                        31, 2024 (as per the F&S Report). Backed by GEF Capital,
-                        Washington DC based Global Environment Fund, Premier
+                        Premier Energies is an integrated solar cell and solar
+                        module manufacturing company. Backed by GEF Capital, a
+                        Washington DC based Private Equity Investor, Premier
                         Energies is at the forefront of innovative technology,
-                        crafting photovoltaic products and solutions for
-                        projects of all sizes.
+                        crafting high-tech photovoltaic products and solutions.
                       </p>
                       <NavLink className="btn-4" to="/about-premier-energies">
                         <span>Read More</span>
@@ -663,7 +661,7 @@ export const Home = () => {
                     data-aos-once="true"
                     data-aos-duration="500"
                   >
-                    <img src={Nature} alt="img"/>
+                    <img src={Nature} alt="img" />
                   </div>
                 </div>
               </div>

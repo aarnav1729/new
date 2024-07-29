@@ -397,14 +397,12 @@ export const Home = () => {
                             data-aos-once="true"
                             data-aos-duration="500"
                           >
-                            Established in 1995, Premier Energies has risen to
-                            become India's second-largest integrated solar cell
-                            and solar module manufacturing company as of March
-                            31, 2023 (Report from F&S). Backed by GEF Capital, a
-                            Washington DC based Private Equity Investor, Premier
-                            Energies is at the forefront of innovative
-                            technology, crafting photovoltaic products and
-                            solutions.
+                            Established in 1995, Premier Energies is an
+                            integrated solar cell and solar module manufacturing
+                            company. Backed by GEF Capital, a Washington DC
+                            based Private Equity Investor, Premier Energies is
+                            at the forefront of innovative technology, crafting
+                            photovoltaic products and solutions.
                           </p>
 
                           <p
@@ -886,8 +884,7 @@ export const Home = () => {
                                 data-aos-easing="ease-in-sine"
                                 data-aos-once="true"
                                 data-aos-duration="500"
-                              >
-                              </p>
+                              ></p>
                               <p
                                 data-aos="fade-up"
                                 data-aos-offset="100"
