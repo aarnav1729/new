@@ -49,7 +49,7 @@ export const Sudhir = () => {
                       data-aos-once="true"
                       data-aos-duration="500"
                     >
-                      <img src={Leadership01} />
+                      <img src={Leadership01} alt="img" />
                     </div>
                     <p
                       data-aos="fade-right"

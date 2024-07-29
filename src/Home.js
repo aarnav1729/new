@@ -11,8 +11,9 @@ import Solarmodule from "./images/solar-module.jpg";
 import Nature from "./images/solar-video.gif";
 import Premiervideo from "./images/premier-video.mp4";
 import Mpremiervideo from "./images/mpremier-video.mp4";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import FormPopup from "./components/FormPopup"; // Import FormPopup component
 import axios from "axios";
 
 var decodeHTML = function (html) {
@@ -32,6 +33,8 @@ export const Home = () => {
     setActive(!popup);
   };
 
+  const [isFormOpen, setIsFormOpen] = useState(true); // Set to true to show popup onload
+
   const [pagedata, setPagedata] = useState([]);
 
   const [enquirefrm, setActive1] = useState("false");
@@ -39,6 +42,7 @@ export const Home = () => {
   const handleToggle1 = () => {
     setActive1(!enquirefrm);
   };
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -671,6 +675,9 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
+      {isFormOpen && <FormPopup onClose={() => setIsFormOpen(false)} />}
+      
       <Footer />
     </>
   );
