@@ -42,6 +42,7 @@
     "yup": "^1.4.0"
   },
   "scripts": {
+    "preinstall": "npx npm install --legacy-peer-deps",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

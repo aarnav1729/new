@@ -22,7 +22,7 @@ const FormPopup = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post('http://localhost:5000/submit', formData);
+    const response = await axios.post('https://popup-1-3xga.onrender.com/submit', formData);
     if (response.status === 200) {
       alert('Form submitted successfully!');
       onClose();
