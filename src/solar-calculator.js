@@ -1,8 +1,10 @@
+/*
 import React, { useState, useEffect, useRef } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import solcalImage from "./images/solcal.jpg";
-import Chart from "chart.js";
+
+ import Chart from "chart.js";
 
 const statesInIndia = [
   "Andhra Pradesh",
@@ -317,4 +319,5 @@ const SolarCalculator = () => {
   );
 };
 
-export default SolarCalculator;
+export default SolarCalculator; 
+*/
