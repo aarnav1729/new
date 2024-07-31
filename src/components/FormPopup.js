@@ -10,6 +10,7 @@ const FormPopup = ({ onClose }) => {
     lastName: '',
     phoneNumber: '',
     email: '',
+    department: '',
     message: ''
   });
 
@@ -46,6 +47,14 @@ const FormPopup = ({ onClose }) => {
             <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last Name" required className="form-popup-input" />
             <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} placeholder="Phone Number" required className="form-popup-input" />
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required className="form-popup-input" />
+            <select name="department" value={formData.department} onChange={handleChange} required className="form-popup-input">
+              <option value="" disabled>Select Department</option>
+              <option value="Sales">Sales</option>
+              <option value="Support">Operations</option>
+              <option value="Marketing">Marketing</option>
+              <option value="HR">HR</option>
+              <option value="IT">Other</option>
+            </select>
             <textarea name="message" value={formData.message} onChange={handleChange} placeholder="How can we help you?" required className="form-popup-textarea" />
             <button type="submit" className="form-popup-button">Submit</button>
           </form>
