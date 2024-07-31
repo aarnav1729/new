@@ -4,9 +4,46 @@ import Banner from "./images/contact_us.jpg";
 import { Footer } from "./components/Footer";
 import { Helmet } from "react-helmet";
 import Gravience from "./components/Gravience";
+import axios from 'axios';
 
 export const Contact = () => {
   const [grievanceform, setActive] = useState("false");
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    department: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post('https://popup-1-3xga.onrender.com/submit', formData);
+    if (response.status === 200) {
+      alert('Form submitted successfully!');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        email: '',
+        department: '',
+        message: ''
+      });
+    } 
+    
+    else {
+      alert('Failed to submit the form.');
+    }
+  };
 
   const handleToggle = () => {
     setActive(!grievanceform);
@@ -76,7 +113,7 @@ export const Contact = () => {
                   </h1>
                 </div>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <h3 className="m-0">How can we help you?</h3>
                 <ul
                   className="form d-flex flex-wrap justify-content-between"
@@ -88,46 +125,67 @@ export const Contact = () => {
                 >
                   <li>
                     <input
-                      type="text"
-                      placeholder="Name*"
-                      name="text"
-                      required
-                    />
+                        type="text"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="First Name*"
+                        required
+                      />
                   </li>
                   <li>
                     <input
-                      type="text"
-                      placeholder="Company*"
-                      name="text"
-                      required
-                    />
+                        type="text"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        placeholder="Last Name*"
+                        required
+                      />
                   </li>
                   <li>
                     <input
-                      type="email"
-                      placeholder="Country"
-                      name="email"
-                      required
-                    />
+                        type="tel"
+                        name="phoneNumber"
+                        value={formData.phoneNumber}
+                        onChange={handleChange}
+                        placeholder="Phone Number*"
+                        required
+                      />
                   </li>
                   <li>
                     <input
-                      type="tel"
-                      placeholder="Contact*"
-                      name="phone"
-                      required
-                    />
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email*"
+                        required
+                      />
                   </li>
                   <li>
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      name="email"
+                    <select
+                      name="department"
+                      value={formData.department}
+                      onChange={handleChange}
                       required
-                    />
+                    >
+                      <option value="" disabled>Select Department</option>
+                      <option value="Sales">Sales</option>
+                      <option value="Operations">Operations</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="HR">HR</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </li>
                   <li>
-                    <textarea placeholder="Message"></textarea>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Message"
+                      required
+                    ></textarea>
                   </li>
                   <li>
                     <button type="submit" className="btn-4">
