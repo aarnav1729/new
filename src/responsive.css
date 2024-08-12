@@ -1762,6 +1762,9 @@
   .filling-heading {
     width: 90%;
   }
+  .download_dataSheet_ .cnt .pdf_text {
+    font-size: 17px;
+  }
 
   .value,
   .infracont,
@@ -3755,6 +3758,9 @@
   }
   ._gravience_from_btn {
     width: 80%;
+  }
+  .download_dataSheet_ .cnt .pdf_text {
+    font-size: 14px;
   }
 }
 @media (max-width: 420px) {

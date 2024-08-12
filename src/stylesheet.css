@@ -6058,6 +6058,45 @@ a.investor-detail-page:before {
   padding: 5px 0;
   border-radius: 5px;
 }
-.form  li input.input-error{
+.form li input.input-error {
   border-color: #ee3156;
+}
+
+.download_dataSheet_ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.download_dataSheet_ a {
+  text-decoration: none;
+}
+.download_dataSheet_ .pdf__card {
+  background-color: #0f6ab0;
+  transition: ease all 0.3s;
+  min-height: 100px;
+  height: auto;
+  justify-content: center;
+}
+.download_dataSheet_ .pdf__card:hover {
+  background-color: #5eb44b;
+}
+.download_dataSheet_ .cnt {
+  width: 100%;
+}
+.download_dataSheet_ .cnt .color000 {
+  fill: #fff;
+}
+.download_dataSheet_ .cnt .pdf_text {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+.dataSheets.centerit._investor_relation {
+  width: fit-content;
+  margin-top: 15px;
+}
+.dataSheets.centerit._investor_relation h3 {
+  margin-top: 20px;
 }

@@ -1,0 +1,30 @@
+{
+  "downloadData": {
+    "SolarModule": {
+      "Heading": "SOLAR CELL",
+      "Data": [
+        {
+          "text": "182 Solar Cell<br/>Atlantic N-Type M10 Bifacial",
+          "link": "https://premierenergies.com/downloads/Data Sheet - Atlantic  N-Type_Solar Cell.pdf"
+        },
+        {
+          "text": "182 Mono PERC Solar Cell<br/>Piranha P-Type M10 Bifacial",
+          "link": "https://premierenergies.com/downloads/Data Sheet - PIRANHA P-TYPE_25042024.pdf"
+        }
+      ]
+    },
+    "SolarCells": {
+      "Heading": "SOLAR  MODULE",
+      "Data": [
+        {
+          "text": "144 Half Cut N-Type Cell<br/>Bifacial Dual Glass Module<br/> 560 - 590 W",
+          "link": "https://premierenergies.com/downloads/PE-144 HC N-Type_Bifacial Dual Glass 560-590W.pdf"
+        },
+        {
+          "text": "144 Half Cut PERC Cell<br/>Bifacial Transparent Backsheet<br/> 525 - 555 W",
+          "link": "https://premierenergies.com/downloads/PE-144 HC PERC_Bifacial Transparent 525-555W.pdf"
+        }
+      ]
+    }
+  }
+}

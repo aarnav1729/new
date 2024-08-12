@@ -11,6 +11,7 @@ import { ESG } from "./ESG";
 import { Leadership } from "./Leadership";
 import { Contact } from "./Contact";
 import { DownloadProfile } from "./DownloadProfile";
+import {DownloadDataSheets} from "./DownloadDataSheets";
 import { Career } from "./Career";
 import { Module } from "./Module";
 import { Undermaintaince } from "./Undermaintaince";
@@ -66,6 +67,11 @@ const App = () => {
             exact
             path="/downloadprofile"
             element={<DownloadProfile />}
+          ></Route>
+          <Route
+            exact
+            path="/download-datasheets"
+            element={<DownloadDataSheets />}
           ></Route>
           <Route
             exact

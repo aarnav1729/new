@@ -26,7 +26,7 @@ export const Footer = () => {
         <div
           className="footer"
           data-aos="fade-in"
-          data-aos-offset="500"
+          data-aos-offset="100"
           data-aos-easing="ease-in-sine"
           data-aos-duration="500"
           data-aos-once="true"
