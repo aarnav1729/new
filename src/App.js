@@ -70,7 +70,7 @@ const App = () => {
           ></Route>
           <Route
             exact
-            path="/download-datasheets"
+            path="/download_datasheets"
             element={<DownloadDataSheets />}
           ></Route>
           <Route

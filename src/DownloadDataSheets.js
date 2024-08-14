@@ -64,28 +64,7 @@ export const DownloadDataSheets = () => {
   return (
     <>
       <Helmet>
-        <title>Investor Relations - Premier Energies</title>
-        <meta
-          name="description"
-          content="Explore Exciting Career Opportunities at Premier Energies - Join the Team that Illuminates the World."
-        />
-        <link
-          rel="canonical"
-          href="https://premierenergies.com/investor-relations"
-        />
-        <meta
-          property="og:url"
-          content="https://premierenergies.com/investor-relations"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Investor-Relations - Premier Energies"
-        />
-        <meta
-          name="og:description"
-          content="Explore Exciting Career Opportunities at Premier Energies - Join the Team that Illuminates the World."
-        ></meta>
+        <title>Download Datasheets - Premier Energies</title>
       </Helmet>
       <div className="whitebg">
         <Header />
