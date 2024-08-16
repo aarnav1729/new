@@ -861,6 +861,16 @@
   .timeline-container .heading2 {
     font-size: 35px;
   }
+  .downloadDataSheets .footerrow:before {
+    top: 3.3%;
+  }
+  .downloadDataSheets .footerrow:after {
+    top: 34.5%;
+  }
+  .downloadDataSheets .footer:before {
+    top: inherit;
+    bottom: 25%;
+  }
 }
 @media (max-width: 1380px) {
   .corefeature h4,
@@ -1438,6 +1448,12 @@
   ._gravience_from_btn {
     width: 25%;
   }
+  .downloadDataSheets .footerrow:before {
+    top: 4%;
+  }
+  .downloadDataSheets .footerrow:after {
+    top: 37.5%;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -1585,6 +1601,12 @@
   .gravience_tabs .btn-4 span {
     font-size: 13px;
   }
+  .downloadDataSheets .footerrow:before {
+    top: 2.4%;
+  }
+  .downloadDataSheets .footerrow:after {
+    top: 36.5%;
+  }
 }
 @media (max-width: 1160px) {
   .footerrow:after {
@@ -1618,6 +1640,9 @@
   }
   .articles-container.newroom {
     width: 100%;
+  }
+  .downloadDataSheets .socialdesp .newaddress li {
+    width: 33%;
   }
 }
 @media (max-width: 1024px) {
@@ -3059,6 +3084,12 @@
     height: 100dvh;
   }
   .ir-item {
+    width: 100%;
+  }
+  .downloadDataSheets .social.full-band {
+    border-top: none;
+  }
+  .downloadDataSheets .socialdesp .newaddress li {
     width: 100%;
   }
 }

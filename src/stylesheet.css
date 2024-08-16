@@ -6100,3 +6100,29 @@ a.investor-detail-page:before {
 .dataSheets.centerit._investor_relation h3 {
   margin-top: 20px;
 }
+.downloadDataSheets .social {
+  width: 100%;
+}
+.downloadDataSheets .socialdesp .newaddress li {
+  width: 25%;
+}
+.downloadDataSheets .social.full-band {
+  width: 100%;
+}
+.downloadDataSheets .footerrow:before {
+  top: 6%;
+}
+.downloadDataSheets .footerrow:after {
+  top: 40.5%;
+}
+.downloadDataSheets .footer:before {
+  top: inherit;
+  bottom: 27%;
+}
+.downloadDataSheets .ftrlogo:after {
+  height: 101.5%;
+}
+.DownloadBrochure {
+  border-bottom: 1px solid #cdcdcda8;
+  padding-bottom: 30px;
+}

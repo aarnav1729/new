@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/FooterDataSheets";
 import Header from "./components/Header";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
@@ -11,20 +11,22 @@ export const DownloadDataSheets = () => {
     return (
       <>
         <div className="col-12">
-          <div className="centerit _investor_relation dataSheets">
-            <span className="colorborder">
-              <em></em>
-            </span>
-            <h3
-              data-aos="fade-up"
-              data-aos-offset="100"
-              data-aos-easing="ease-in-sine"
-              data-aos-once="true"
-              data-aos-duration="500"
-            >
-              {Datasheets.downloadData[category].Heading}
-            </h3>
-          </div>
+          {Datasheets.downloadData[category].Heading && (
+            <div className="centerit _investor_relation dataSheets">
+              <span className="colorborder">
+                <em></em>
+              </span>
+              <h3
+                data-aos="fade-up"
+                data-aos-offset="100"
+                data-aos-easing="ease-in-sine"
+                data-aos-once="true"
+                data-aos-duration="500"
+              >
+                {Datasheets.downloadData[category].Heading}
+              </h3>
+            </div>
+          )}
           <div
             className="col-lg-8 col-md-10 col-12 pt-md-3 pt-2 mx-auto download_dataSheet_ "
             data-aos="fade-in"
@@ -75,7 +77,28 @@ export const DownloadDataSheets = () => {
           <div className="container">
             <div className="row">
               <div className="web-container">
-                <div className=" mx-auto ">
+                <div className=" mx-auto DownloadBrochure">
+                  <div className="title centerheading">
+                    <div className="centerit">
+                      {/* <span className="colorborder">
+                        <em></em>
+                      </span> */}
+                      <h1
+                        data-aos="fade-down"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-once="true"
+                        data-aos-duration="500"
+                      >
+                        Download Brochure
+                      </h1>
+                    </div>
+                  </div>
+                  <div className="d-flex gap-4 col-12  flex-column">
+                    {renderDataSheets("Brouchure")}
+                  </div>
+                </div>
+                <div className=" mx-auto  ">
                   <div className="title centerheading">
                     <div className="centerit">
                       {/* <span className="colorborder">

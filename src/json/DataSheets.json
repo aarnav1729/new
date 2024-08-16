@@ -1,5 +1,14 @@
 {
   "downloadData": {
+    "Brouchure": {
+      "Heading": "",
+      "Data": [
+        {
+          "text": "Download Our Brochure",
+          "link": "https://www.premierenergies.com/downloads/Premier_Energies_Brochure_International.pdf"
+        }
+      ]
+    },
     "SolarModule": {
       "Heading": "SOLAR CELL",
       "Data": [
