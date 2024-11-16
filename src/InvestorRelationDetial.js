@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import { Helmet } from "react-helmet";
 import CustomAcc from "./CustomAcc";
 import { Link, useParams } from "react-router-dom";
-import InvestorRealtionDiscliamer from "./components/InvestorRealtionDiscliamer";
-import Cookies from "js-cookie";
 
 export const InvestorRelationDetial = () => {
   const { slug } = useParams();
@@ -14,27 +12,6 @@ export const InvestorRelationDetial = () => {
     text = text.replace(/\b\w/g, (char) => char.toUpperCase());
 
     return text;
-  };
-  const [shouldDisclamierd, setShouldDisclamierd] = useState(false);
-  const [showComponentB, setShowComponentB] = useState(false);
-
-  useEffect(() => {
-    const loaderHidden = Cookies.get("loaderHidden");
-    if (loaderHidden === undefined || loaderHidden === "false") {
-      setShouldDisclamierd(true);
-    } else {
-      setShouldDisclamierd(false);
-    }
-  }, []);
-
-  const handleDisclamierdChange = (value) => {
-    if (value === false) {
-      setShowComponentB(true);
-      setShouldDisclamierd(false);
-    } else {
-      setShowComponentB(false);
-      setShouldDisclamierd(false);
-    }
   };
 
   return (
@@ -89,42 +66,25 @@ export const InvestorRelationDetial = () => {
           <div className="container">
             <div className="row">
               <div className="web-container">
-                {shouldDisclamierd && (
-                  <InvestorRealtionDiscliamer
-                    onConfirm={handleDisclamierdChange}
-                  />
-                )}
-                {!shouldDisclamierd && showComponentB && (
-                  <div className="d-flex justify-content-center col-12">
-                    <h4 class="text-center not_accpt_disc col-12">
-                      You are not permitted to view the materials in this
-                      section of the website.
-                    </h4>
-                  </div>
-                )}
-                {!shouldDisclamierd && !showComponentB && (
-                  <>
-                    <div className="careerbox">
-                      <div className="title centerheading">
-                        <div className="centerit _investor_relation">
-                          <span className="colorborder">
-                            <em></em>
-                          </span>
-                          <h3
-                            data-aos="fade-up"
-                            data-aos-offset="100"
-                            data-aos-easing="ease-in-sine"
-                            data-aos-once="true"
-                            data-aos-duration="500"
-                          >
-                            {slugToText(slug)}
-                          </h3>
-                        </div>
-                      </div>
+                <div className="careerbox">
+                  <div className="title centerheading">
+                    <div className="centerit _investor_relation">
+                      <span className="colorborder">
+                        <em></em>
+                      </span>
+                      <h3
+                        data-aos="fade-up"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                        data-aos-once="true"
+                        data-aos-duration="500"
+                      >
+                        {slugToText(slug)}
+                      </h3>
                     </div>
-                    <CustomAcc />
-                  </>
-                )}
+                  </div>
+                </div>
+                <CustomAcc />
               </div>
             </div>
           </div>

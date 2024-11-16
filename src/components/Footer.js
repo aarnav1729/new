@@ -313,11 +313,11 @@ export const Footer = () => {
                     <ul className="pull-right">
                       <li>
                         <a
-                          href="https://www.triverseadvertising.com/"
+                          href="https://webstaxinc.vercel.app/"
                           target="_blank"
                           rel="noreferrer"
                         >
-                          design : triverse
+                          design : webstax
                         </a>
                       </li>
                     </ul>
